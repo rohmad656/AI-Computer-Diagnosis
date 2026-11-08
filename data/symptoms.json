@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "description": "Data gejala masalah komputer Windows.",
+  "categories": [
+    {
+      "id": "driver_software",
+      "name": "Driver dan perangkat lunak sistem",
+      "description": "Masalah driver, ketidakcocokan software, atau BSOD terkait driver.",
+      "required_evidence": ["driver_issue_confirmed"],
+      "recommendations": [
+        "Perbarui driver perangkat via Device Manager atau situs resmi produsen.",
+        "Jalankan SFC (/scannow) dan DISM untuk memperbaiki file sistem Windows."
+      ]
+    },
+    {
+      "id": "overheating",
+      "name": "Overheating",
+      "description": "Suhu komponen CPU/GPU melebihi ambang batas operasional aman.",
+      "required_evidence": ["high_temperature_confirmed"],
+      "recommendations": [
+        "Bersihkan debu pada kipas dan heatsink.",
+        "Ganti pasta termal (thermal paste) pada CPU/GPU.",
+        "Pastikan sirkulasi udara (airflow) casing berfungsi baik."
+      ]
+    },
+    {
+      "id": "storage_disk",
+      "name": "Storage dan disk",
+      "description": "Kerusakan sektor disk, masalah S.M.A.R.T., atau kegagalan I/O penyimpanan.",
+      "required_evidence": ["disk_issue_confirmed"],
+      "recommendations": [
+        "Cadangkan (backup) data penting segera.",
+        "Jalankan chkdsk untuk memeriksa bad sector.",
+        "Pertimbangkan penggantian drive jika indikator S.M.A.R.T. menunjukkan warning/bad."
+      ]
+    },
+    {
+      "id": "ram_memory",
+      "name": "RAM dan memori",
+      "description": "Kerusakan fisik RAM atau ketidakstabilan modul memori.",
+      "required_evidence": ["memory_issue_confirmed"],
+      "recommendations": [
+        "Jalankan Windows Memory Diagnostic atau MemTest86.",
+        "Bersihkan pin kuningan modul RAM dengan penghapus lunak.",
+        "Tes modul RAM satu per satu pada slot terpisah."
+      ]
+    }
+  ],
+  "symptoms": [
+    {
+      "id": "sym_bsod_driver",
+      "name": "Layar biru (BSOD) dengan pesan error driver (seperti SYSTEM_SERVICE_EXCEPTION)",
+      "description": "Komputer crash dan menunjukkan pesan error terkait file driver (.sys).",
+      "related_categories": ["driver_software"]
+    },
+    {
+      "id": "sym_device_manager_yellow",
+      "name": "Tanda seru kuning di Device Manager",
+      "description": "Perangkat keras terdeteksi bermasalah atau driver tidak terpasang dengan benar.",
+      "related_categories": ["driver_software"]
+    },
+    {
+      "id": "sym_shutdown_thermal",
+      "name": "Komputer mati mendadak saat menjalankan beban berat (game/rendering)",
+      "description": "Komputer mendadak mati tanpa pesan BSOD ketika suhu komponen meningkat.",
+      "related_categories": ["overheating"]
+    },
+    {
+      "id": "sym_fan_loud_hot",
+      "name": "Kipas berputar sangat kencang dan udara keluran terasa sangat panas",
+      "description": "Suara kipas bising secara terus menerus walau kondisi idle atau beban ringan.",
+      "related_categories": ["overheating"]
+    },
+    {
+      "id": "sym_disk_slow_freeze",
+      "name": "Akses file sangat lambat atau Windows sering freeze saat membuka folder",
+      "description": "Indikator penggunaan disk 100% di Task Manager dan respons drive sangat lambat.",
+      "related_categories": ["storage_disk"]
+    },
+    {
+      "id": "sym_chkdsk_auto",
+      "name": "Windows otomatis menjalankan Scanning and Repairing Drive saat booting",
+      "description": "Sistem mendeteksi inkonsistensi sistem file pada media penyimpanan.",
+      "related_categories": ["storage_disk"]
+    },
+    {
+      "id": "sym_app_crash_random",
+      "name": "Aplikasi mendadak closed/crash secara acak tanpa pola jelas",
+      "description": "Berbagai program berbeda crash secara bergantian dengan error memory access violation.",
+      "related_categories": ["ram_memory"]
+    },
+    {
+      "id": "sym_bsod_memory_management",
+      "name": "Layar biru (BSOD) dengan pesan MEMORY_MANAGEMENT",
+      "description": "Windows mendeteksi kegagalan alokasi atau kerusakan struktur data di RAM.",
+      "related_categories": ["ram_memory"]
+    }
+  ]
+}

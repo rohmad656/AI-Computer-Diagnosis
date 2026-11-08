@@ -1,0 +1,27 @@
+# ============================================================
+# Streamlit theme — Modern Tech Diagnostics
+# Menetapkan tema light secara eksplisit agar seluruh widget
+# native (multiselect, radio, checkbox, metric, selectbox)
+# memakai palet aplikasi, bukan default merah/gelap Streamlit.
+# ============================================================
+
+[theme]
+base = "light"
+primaryColor = "#2563EB"
+backgroundColor = "#F1F5F9"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#172033"
+font = "sans serif"
+
+[theme.sidebar]
+backgroundColor = "#172554"
+secondaryBackgroundColor = "#1E3A8A"
+textColor = "#E2E8F0"
+primaryColor = "#38BDF8"
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = true
+
+[browser]
+gatherUsageStats = false

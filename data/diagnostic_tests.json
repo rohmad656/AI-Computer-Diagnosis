@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "description": "Data pemeriksaan diagnostik untuk diagnosis masalah komputer. Cost adalah estimasi relatif usaha/gangguan pemeriksaan.",
+  "tests": [
+    {
+      "id": "test_cpu_gpu_temp",
+      "name": "Cek suhu CPU/GPU",
+      "category": "overheating",
+      "description": "Memeriksa suhu CPU dan GPU menggunakan software monitoring (HWMonitor, Core Temp, atau BIOS).",
+      "cost": 1,
+      "possible_outcomes": ["normal", "elevated", "critical"],
+      "evidence_mapping": {
+        "normal": {
+          "supports": [],
+          "contradicts": ["high_temperature_confirmed"]
+        },
+        "elevated": {
+          "supports": ["high_temperature_confirmed"],
+          "contradicts": []
+        },
+        "critical": {
+          "supports": ["high_temperature_confirmed"],
+          "contradicts": []
+        }
+      },
+      "config_notes": {
+        "thresholds": "Ambang suhu normal/elevated/critical perlu divalidasi per model CPU/GPU. Contoh rujukan: CPU idle < 50°C, elevated 50-80°C, critical > 80°C. GPU idle < 45°C, elevated 45-83°C, critical > 83°C."
+      }
+    },
+    {
+      "id": "test_smart_disk",
+      "name": "Cek SMART disk",
+      "category": "storage_disk",
+      "description": "Memeriksa atribut S.M.A.R.T. drive menggunakan tool seperti CrystalDiskInfo, smartctl, atau wmic.",
+      "cost": 2,
+      "possible_outcomes": ["healthy", "warning", "bad"],
+      "evidence_mapping": {
+        "healthy": {
+          "supports": [],
+          "contradicts": ["disk_issue_confirmed"]
+        },
+        "warning": {
+          "supports": ["disk_issue_confirmed"],
+          "contradicts": []
+        },
+        "bad": {
+          "supports": ["disk_issue_confirmed"],
+          "contradicts": []
+        }
+      },
+      "config_notes": {
+        "thresholds": "Ambang atribut S.M.A.R.T. (Reallocated_Sectors_Count, Current_Pending_Sector, Offline_Uncorrectable) perlu divalidasi. Standar vendor drive berbeda-beda."
+      }
+    },
+    {
+      "id": "test_driver_status",
+      "name": "Cek status driver",
+      "category": "driver_software",
+      "description": "Memeriksa Device Manager untuk tanda error, driver tidak terpasang, atau versi driver bermasalah.",
+      "cost": 2,
+      "possible_outcomes": ["all_ok", "yellow_bang", "error_code"],
+      "evidence_mapping": {
+        "all_ok": {
+          "supports": [],
+          "contradicts": ["driver_issue_confirmed"]
+        },
+        "yellow_bang": {
+          "supports": ["driver_issue_confirmed"],
+          "contradicts": []
+        },
+        "error_code": {
+          "supports": ["driver_issue_confirmed"],
+          "contradicts": []
+        }
+      }
+    },
+    {
+      "id": "test_disk_system_error_logs",
+      "name": "Cek log error disk/sistem",
+      "category": "storage_disk",
+      "description": "Memeriksa Event Viewer (System log) untuk error terkait disk: Event ID 7, 9, 11, 51, 153, atau NTFS warnings.",
+      "cost": 3,
+      "possible_outcomes": ["no_errors", "disk_errors_present"],
+      "evidence_mapping": {
+        "no_errors": {
+          "supports": [],
+          "contradicts": ["disk_issue_confirmed"]
+        },
+        "disk_errors_present": {
+          "supports": ["disk_issue_confirmed"],
+          "contradicts": []
+        }
+      }
+    },
+    {
+      "id": "test_error_code_history",
+      "name": "Cek riwayat kode error",
+      "category": "driver_software",
+      "description": "Menganalisis kode error BSOD (bug check code) dari minidump atau Reliability Monitor, dan mencari pola error driver.",
+      "cost": 3,
+      "possible_outcomes": ["no_driver_errors", "driver_errors_found"],
+      "evidence_mapping": {
+        "no_driver_errors": {
+          "supports": [],
+          "contradicts": ["driver_issue_confirmed"]
+        },
+        "driver_errors_found": {
+          "supports": ["driver_issue_confirmed"],
+          "contradicts": []
+        }
+      }
+    },
+    {
+      "id": "test_memory_diagnostic",
+      "name": "Tes memori yang membutuhkan restart",
+      "category": "ram_memory",
+      "description": "Menjalankan Windows Memory Diagnostic (mdsched.exe) atau MemTest86 yang memerlukan restart sistem.",
+      "cost": 5,
+      "possible_outcomes": ["no_errors", "errors_found"],
+      "evidence_mapping": {
+        "no_errors": {
+          "supports": [],
+          "contradicts": ["memory_issue_confirmed"]
+        },
+        "errors_found": {
+          "supports": ["memory_issue_confirmed"],
+          "contradicts": []
+        }
+      }
+    }
+  ]
+}

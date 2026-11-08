@@ -1,0 +1,21 @@
+case_id,category,name,expected_diagnosis,expected_status,ucs_diagnosis,ucs_status,ucs_outcome,ucs_test_count,ucs_total_cost,checklist_diagnosis,checklist_status,checklist_outcome,checklist_test_count,checklist_total_cost,ucs_evidence_consistent,checklist_evidence_consistent
+eval_oh_01,overheating,Overheating Akut - CPU Critical,overheating,conclusive,overheating,conclusive,correct,1,1,overheating,conclusive,correct,1,1,True,True
+eval_oh_02,overheating,Overheating - Suhu Elevated,overheating,conclusive,overheating,conclusive,correct,1,1,overheating,conclusive,correct,1,1,True,True
+eval_oh_03,overheating,Overheating - Tidak Konklusif (Suhu Normal),,inconclusive,,inconclusive,correct_inconclusive,1,1,,inconclusive,correct_inconclusive,1,1,True,True
+eval_oh_04,overheating,Overheating dengan Gejala Driver,overheating,conclusive,overheating,conclusive,correct,1,1,overheating,conclusive,correct,1,1,True,True
+eval_drv_01,driver_software,Driver Masalah - Yellow Bang,driver_software,conclusive,driver_software,conclusive,correct,1,2,driver_software,conclusive,correct,1,2,True,True
+eval_drv_02,driver_software,Driver Masalah - Kode Error,driver_software,conclusive,driver_software,conclusive,correct,1,2,driver_software,conclusive,correct,1,2,True,True
+eval_drv_03,driver_software,Driver - Tidak Konklusif (Semua Normal),,inconclusive,,inconclusive,correct_inconclusive,1,2,,inconclusive,correct_inconclusive,1,2,True,True
+eval_drv_04,driver_software,Driver dengan Gejala Storage,driver_software,conclusive,driver_software,conclusive,correct,2,4,driver_software,conclusive,correct,1,2,True,True
+eval_stg_01,storage_disk,Storage - SMART Warning,storage_disk,conclusive,storage_disk,conclusive,correct,1,2,storage_disk,conclusive,correct,1,2,True,True
+eval_stg_02,storage_disk,Storage - SMART Bad,storage_disk,conclusive,storage_disk,conclusive,correct,1,2,storage_disk,conclusive,correct,1,2,True,True
+eval_stg_03,storage_disk,Storage - Tidak Konklusif,,inconclusive,,inconclusive,correct_inconclusive,1,2,,inconclusive,correct_inconclusive,1,2,True,True
+eval_stg_04,storage_disk,Storage dengan Gejala RAM,storage_disk,conclusive,storage_disk,conclusive,correct,1,2,storage_disk,conclusive,correct,1,2,True,True
+eval_ram_01,ram_memory,RAM - Memory Diagnostic Error,ram_memory,conclusive,ram_memory,conclusive,correct,1,5,ram_memory,conclusive,correct,1,5,True,True
+eval_ram_02,ram_memory,RAM - Tidak Konklusif,,inconclusive,,inconclusive,correct_inconclusive,1,5,,inconclusive,correct_inconclusive,1,5,True,True
+eval_ram_03,ram_memory,RAM dengan Gejala Driver,ram_memory,conclusive,ram_memory,conclusive,correct,2,7,ram_memory,conclusive,correct,2,7,True,True
+eval_mixed_01,driver_software,Driver dengan Gejala Overheating,driver_software,conclusive,driver_software,conclusive,correct,2,3,driver_software,conclusive,correct,2,3,True,True
+eval_mixed_02,storage_disk,Storage dengan Gejala Driver,storage_disk,conclusive,storage_disk,conclusive,correct,1,2,storage_disk,conclusive,correct,2,4,True,True
+eval_mixed_03,overheating,Overheating dengan Gejala RAM,overheating,conclusive,overheating,conclusive,correct,1,1,overheating,conclusive,correct,1,1,True,True
+eval_mixed_04,storage_disk,Storage dengan Gejala Driver dan RAM,storage_disk,conclusive,storage_disk,conclusive,correct,1,2,storage_disk,conclusive,correct,2,4,True,True
+eval_mixed_05,mixed,Tidak Konklusif Multi-Kategori,,inconclusive,,inconclusive,correct_inconclusive,3,9,,inconclusive,correct_inconclusive,3,9,True,True

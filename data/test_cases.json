@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "description": "Kasus uji simulasi diagnosis komputer Windows untuk pengujian end-to-end.",
+  "test_cases": [
+    {
+      "id": "tc_overheating_case_1",
+      "name": "Kasus Overheating Akut",
+      "description": "Komputer sering mati mendadak saat rendering video dan kipas bersuara kencang.",
+      "initial_symptoms": ["sym_shutdown_thermal", "sym_fan_loud_hot"],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "critical"
+      },
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive"
+    },
+    {
+      "id": "tc_driver_case_1",
+      "name": "Kasus Masalah Driver Display",
+      "description": "BSOD berulang dengan indikasi driver display bermasalah.",
+      "initial_symptoms": ["sym_bsod_driver"],
+      "simulated_test_results": {
+        "test_driver_status": "yellow_bang"
+      },
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive"
+    },
+    {
+      "id": "tc_storage_case_1",
+      "name": "Kasus Kerusakan Sektor Disk",
+      "description": "Akses folder lambat dan Windows otomatis menjalankan scanning drive.",
+      "initial_symptoms": ["sym_disk_slow_freeze", "sym_chkdsk_auto"],
+      "simulated_test_results": {
+        "test_smart_disk": "warning"
+      },
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive"
+    },
+    {
+      "id": "tc_ram_case_1",
+      "name": "Kasus Kerusakan Modul RAM",
+      "description": "BSOD MEMORY_MANAGEMENT dan crash aplikasi acak.",
+      "initial_symptoms": ["sym_bsod_memory_management", "sym_app_crash_random"],
+      "simulated_test_results": {
+        "test_memory_diagnostic": "errors_found"
+      },
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive"
+    },
+    {
+      "id": "tc_inconclusive_case_1",
+      "name": "Kasus Tidak Konklusif (Semua Uji Normal)",
+      "description": "Gejala ada tetapi seluruh hasil tes diagnostik menyatakan normal.",
+      "initial_symptoms": ["sym_shutdown_thermal"],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "normal"
+      },
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive"
+    }
+  ]
+}

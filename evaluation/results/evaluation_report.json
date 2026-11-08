@@ -1,0 +1,1375 @@
+{
+  "metadata": {
+    "total_cases": 20,
+    "category_distribution": {
+      "overheating": 5,
+      "driver_software": 5,
+      "storage_disk": 6,
+      "ram_memory": 3,
+      "mixed": 1
+    },
+    "expected_status_distribution": {
+      "conclusive": 15,
+      "inconclusive": 5
+    },
+    "dataset": "evaluation_dataset.json",
+    "note": "Hasil hanya berlaku untuk skenario simulasi yang disiapkan. Tidak mengklaim akurasi terhadap kerusakan komputer nyata."
+  },
+  "summary": {
+    "ucs": {
+      "cases_total": 20,
+      "correct_conclusive": 15,
+      "correct_inconclusive": 5,
+      "correct_total": 20,
+      "accuracy": 1.0,
+      "wrong_diagnosis": 0,
+      "false_negative": 0,
+      "false_positive": 0,
+      "actual_inconclusive": 5,
+      "average_cost": 2.8,
+      "average_conclusive_cost": 2.466666666666667,
+      "average_test_count": 1.25,
+      "conflict_cases": 13,
+      "conflict_cases_correct": 13,
+      "evidence_consistent_cases": 20,
+      "outcomes": {
+        "correct": 15,
+        "correct_inconclusive": 5,
+        "wrong_diagnosis": 0,
+        "false_negative": 0,
+        "false_positive": 0
+      }
+    },
+    "checklist": {
+      "cases_total": 20,
+      "correct_conclusive": 15,
+      "correct_inconclusive": 5,
+      "correct_total": 20,
+      "accuracy": 1.0,
+      "wrong_diagnosis": 0,
+      "false_negative": 0,
+      "false_positive": 0,
+      "actual_inconclusive": 5,
+      "average_cost": 2.9,
+      "average_conclusive_cost": 2.6,
+      "average_test_count": 1.3,
+      "conflict_cases": 13,
+      "conflict_cases_correct": 13,
+      "evidence_consistent_cases": 20,
+      "outcomes": {
+        "correct": 15,
+        "correct_inconclusive": 5,
+        "wrong_diagnosis": 0,
+        "false_negative": 0,
+        "false_positive": 0
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "eval_oh_01",
+      "category": "overheating",
+      "name": "Overheating Akut - CPU Critical",
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_cpu_gpu_temp",
+            "test_name": "Cek suhu CPU/GPU",
+            "outcome": "critical",
+            "cost": 1,
+            "cumulative_cost": 1.0
+          }
+        ],
+        "total_cost": 1,
+        "test_count": 1,
+        "diagnosis": "overheating",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "high_temperature_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_cpu_gpu_temp",
+            "test_name": "Cek suhu CPU/GPU",
+            "outcome": "critical",
+            "cost": 1,
+            "cumulative_cost": 1.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 1,
+        "test_count": 1,
+        "diagnosis": "overheating",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "high_temperature_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_oh_02",
+      "category": "overheating",
+      "name": "Overheating - Suhu Elevated",
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_cpu_gpu_temp",
+            "test_name": "Cek suhu CPU/GPU",
+            "outcome": "elevated",
+            "cost": 1,
+            "cumulative_cost": 1.0
+          }
+        ],
+        "total_cost": 1,
+        "test_count": 1,
+        "diagnosis": "overheating",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "high_temperature_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_cpu_gpu_temp",
+            "test_name": "Cek suhu CPU/GPU",
+            "outcome": "elevated",
+            "cost": 1,
+            "cumulative_cost": 1.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 1,
+        "test_count": 1,
+        "diagnosis": "overheating",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "high_temperature_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_oh_03",
+      "category": "overheating",
+      "name": "Overheating - Tidak Konklusif (Suhu Normal)",
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_cpu_gpu_temp",
+            "test_name": "Cek suhu CPU/GPU",
+            "outcome": "normal",
+            "cost": 1,
+            "cumulative_cost": 1.0
+          }
+        ],
+        "total_cost": 1,
+        "test_count": 1,
+        "diagnosis": null,
+        "status": "inconclusive",
+        "evidence_sufficiency": "insufficient",
+        "supporting_evidence": [],
+        "contradicting_evidence": [
+          "high_temperature_confirmed"
+        ],
+        "outcome": "correct_inconclusive"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_cpu_gpu_temp",
+            "test_name": "Cek suhu CPU/GPU",
+            "outcome": "normal",
+            "cost": 1,
+            "cumulative_cost": 1.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 1,
+        "test_count": 1,
+        "diagnosis": null,
+        "status": "inconclusive",
+        "evidence_sufficiency": "insufficient",
+        "supporting_evidence": [],
+        "contradicting_evidence": [
+          "high_temperature_confirmed"
+        ],
+        "outcome": "correct_inconclusive"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_oh_04",
+      "category": "overheating",
+      "name": "Overheating dengan Gejala Driver",
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_cpu_gpu_temp",
+            "test_name": "Cek suhu CPU/GPU",
+            "outcome": "critical",
+            "cost": 1,
+            "cumulative_cost": 1.0
+          }
+        ],
+        "total_cost": 1,
+        "test_count": 1,
+        "diagnosis": "overheating",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "high_temperature_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_cpu_gpu_temp",
+            "test_name": "Cek suhu CPU/GPU",
+            "outcome": "critical",
+            "cost": 1,
+            "cumulative_cost": 1.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 1,
+        "test_count": 1,
+        "diagnosis": "overheating",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "high_temperature_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_drv_01",
+      "category": "driver_software",
+      "name": "Driver Masalah - Yellow Bang",
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "yellow_bang",
+            "cost": 2,
+            "cumulative_cost": 2.0
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": "driver_software",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "yellow_bang",
+            "cost": 2,
+            "cumulative_cost": 2.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": "driver_software",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_drv_02",
+      "category": "driver_software",
+      "name": "Driver Masalah - Kode Error",
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "error_code",
+            "cost": 2,
+            "cumulative_cost": 2.0
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": "driver_software",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "error_code",
+            "cost": 2,
+            "cumulative_cost": 2.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": "driver_software",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_drv_03",
+      "category": "driver_software",
+      "name": "Driver - Tidak Konklusif (Semua Normal)",
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "all_ok",
+            "cost": 2,
+            "cumulative_cost": 2.0
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": null,
+        "status": "inconclusive",
+        "evidence_sufficiency": "insufficient",
+        "supporting_evidence": [],
+        "contradicting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "outcome": "correct_inconclusive"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "all_ok",
+            "cost": 2,
+            "cumulative_cost": 2.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": null,
+        "status": "inconclusive",
+        "evidence_sufficiency": "insufficient",
+        "supporting_evidence": [],
+        "contradicting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "outcome": "correct_inconclusive"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_drv_04",
+      "category": "driver_software",
+      "name": "Driver dengan Gejala Storage",
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "healthy",
+            "cost": 2,
+            "cumulative_cost": 2.0
+          },
+          {
+            "step": 2,
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "yellow_bang",
+            "cost": 2,
+            "cumulative_cost": 4.0
+          }
+        ],
+        "total_cost": 4,
+        "test_count": 2,
+        "diagnosis": "driver_software",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "contradicting_evidence": [
+          "disk_issue_confirmed"
+        ],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "yellow_bang",
+            "cost": 2,
+            "cumulative_cost": 2.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": "driver_software",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_stg_01",
+      "category": "storage_disk",
+      "name": "Storage - SMART Warning",
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "warning",
+            "cost": 2,
+            "cumulative_cost": 2.0
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": "storage_disk",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "disk_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "warning",
+            "cost": 2,
+            "cumulative_cost": 2.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": "storage_disk",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "disk_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_stg_02",
+      "category": "storage_disk",
+      "name": "Storage - SMART Bad",
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "bad",
+            "cost": 2,
+            "cumulative_cost": 2.0
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": "storage_disk",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "disk_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "bad",
+            "cost": 2,
+            "cumulative_cost": 2.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": "storage_disk",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "disk_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_stg_03",
+      "category": "storage_disk",
+      "name": "Storage - Tidak Konklusif",
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "healthy",
+            "cost": 2,
+            "cumulative_cost": 2.0
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": null,
+        "status": "inconclusive",
+        "evidence_sufficiency": "insufficient",
+        "supporting_evidence": [],
+        "contradicting_evidence": [
+          "disk_issue_confirmed"
+        ],
+        "outcome": "correct_inconclusive"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "healthy",
+            "cost": 2,
+            "cumulative_cost": 2.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": null,
+        "status": "inconclusive",
+        "evidence_sufficiency": "insufficient",
+        "supporting_evidence": [],
+        "contradicting_evidence": [
+          "disk_issue_confirmed"
+        ],
+        "outcome": "correct_inconclusive"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_stg_04",
+      "category": "storage_disk",
+      "name": "Storage dengan Gejala RAM",
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "warning",
+            "cost": 2,
+            "cumulative_cost": 2.0
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": "storage_disk",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "disk_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "warning",
+            "cost": 2,
+            "cumulative_cost": 2.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": "storage_disk",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "disk_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_ram_01",
+      "category": "ram_memory",
+      "name": "RAM - Memory Diagnostic Error",
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_memory_diagnostic",
+            "test_name": "Tes memori yang membutuhkan restart",
+            "outcome": "errors_found",
+            "cost": 5,
+            "cumulative_cost": 5.0
+          }
+        ],
+        "total_cost": 5,
+        "test_count": 1,
+        "diagnosis": "ram_memory",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "memory_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_memory_diagnostic",
+            "test_name": "Tes memori yang membutuhkan restart",
+            "outcome": "errors_found",
+            "cost": 5,
+            "cumulative_cost": 5.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 5,
+        "test_count": 1,
+        "diagnosis": "ram_memory",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "memory_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_ram_02",
+      "category": "ram_memory",
+      "name": "RAM - Tidak Konklusif",
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_memory_diagnostic",
+            "test_name": "Tes memori yang membutuhkan restart",
+            "outcome": "no_errors",
+            "cost": 5,
+            "cumulative_cost": 5.0
+          }
+        ],
+        "total_cost": 5,
+        "test_count": 1,
+        "diagnosis": null,
+        "status": "inconclusive",
+        "evidence_sufficiency": "insufficient",
+        "supporting_evidence": [],
+        "contradicting_evidence": [
+          "memory_issue_confirmed"
+        ],
+        "outcome": "correct_inconclusive"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_memory_diagnostic",
+            "test_name": "Tes memori yang membutuhkan restart",
+            "outcome": "no_errors",
+            "cost": 5,
+            "cumulative_cost": 5.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 5,
+        "test_count": 1,
+        "diagnosis": null,
+        "status": "inconclusive",
+        "evidence_sufficiency": "insufficient",
+        "supporting_evidence": [],
+        "contradicting_evidence": [
+          "memory_issue_confirmed"
+        ],
+        "outcome": "correct_inconclusive"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_ram_03",
+      "category": "ram_memory",
+      "name": "RAM dengan Gejala Driver",
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "all_ok",
+            "cost": 2,
+            "cumulative_cost": 2.0
+          },
+          {
+            "step": 2,
+            "test_id": "test_memory_diagnostic",
+            "test_name": "Tes memori yang membutuhkan restart",
+            "outcome": "errors_found",
+            "cost": 5,
+            "cumulative_cost": 7.0
+          }
+        ],
+        "total_cost": 7,
+        "test_count": 2,
+        "diagnosis": "ram_memory",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "memory_issue_confirmed"
+        ],
+        "contradicting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "all_ok",
+            "cost": 2,
+            "cumulative_cost": 2.0,
+            "step": 1
+          },
+          {
+            "test_id": "test_memory_diagnostic",
+            "test_name": "Tes memori yang membutuhkan restart",
+            "outcome": "errors_found",
+            "cost": 5,
+            "cumulative_cost": 7.0,
+            "step": 2
+          }
+        ],
+        "total_cost": 7,
+        "test_count": 2,
+        "diagnosis": "ram_memory",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "memory_issue_confirmed"
+        ],
+        "contradicting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_mixed_01",
+      "category": "driver_software",
+      "name": "Driver dengan Gejala Overheating",
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_cpu_gpu_temp",
+            "test_name": "Cek suhu CPU/GPU",
+            "outcome": "normal",
+            "cost": 1,
+            "cumulative_cost": 1.0
+          },
+          {
+            "step": 2,
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "yellow_bang",
+            "cost": 2,
+            "cumulative_cost": 3.0
+          }
+        ],
+        "total_cost": 3,
+        "test_count": 2,
+        "diagnosis": "driver_software",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "contradicting_evidence": [
+          "high_temperature_confirmed"
+        ],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_cpu_gpu_temp",
+            "test_name": "Cek suhu CPU/GPU",
+            "outcome": "normal",
+            "cost": 1,
+            "cumulative_cost": 1.0,
+            "step": 1
+          },
+          {
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "yellow_bang",
+            "cost": 2,
+            "cumulative_cost": 3.0,
+            "step": 2
+          }
+        ],
+        "total_cost": 3,
+        "test_count": 2,
+        "diagnosis": "driver_software",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "contradicting_evidence": [
+          "high_temperature_confirmed"
+        ],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_mixed_02",
+      "category": "storage_disk",
+      "name": "Storage dengan Gejala Driver",
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "warning",
+            "cost": 2,
+            "cumulative_cost": 2.0
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": "storage_disk",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "disk_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "all_ok",
+            "cost": 2,
+            "cumulative_cost": 2.0,
+            "step": 1
+          },
+          {
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "warning",
+            "cost": 2,
+            "cumulative_cost": 4.0,
+            "step": 2
+          }
+        ],
+        "total_cost": 4,
+        "test_count": 2,
+        "diagnosis": "storage_disk",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "disk_issue_confirmed"
+        ],
+        "contradicting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_mixed_03",
+      "category": "overheating",
+      "name": "Overheating dengan Gejala RAM",
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_cpu_gpu_temp",
+            "test_name": "Cek suhu CPU/GPU",
+            "outcome": "elevated",
+            "cost": 1,
+            "cumulative_cost": 1.0
+          }
+        ],
+        "total_cost": 1,
+        "test_count": 1,
+        "diagnosis": "overheating",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "high_temperature_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_cpu_gpu_temp",
+            "test_name": "Cek suhu CPU/GPU",
+            "outcome": "elevated",
+            "cost": 1,
+            "cumulative_cost": 1.0,
+            "step": 1
+          }
+        ],
+        "total_cost": 1,
+        "test_count": 1,
+        "diagnosis": "overheating",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "high_temperature_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_mixed_04",
+      "category": "storage_disk",
+      "name": "Storage dengan Gejala Driver dan RAM",
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed",
+        "memory_issue_confirmed"
+      ],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "bad",
+            "cost": 2,
+            "cumulative_cost": 2.0
+          }
+        ],
+        "total_cost": 2,
+        "test_count": 1,
+        "diagnosis": "storage_disk",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "disk_issue_confirmed"
+        ],
+        "contradicting_evidence": [],
+        "outcome": "correct"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "all_ok",
+            "cost": 2,
+            "cumulative_cost": 2.0,
+            "step": 1
+          },
+          {
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "bad",
+            "cost": 2,
+            "cumulative_cost": 4.0,
+            "step": 2
+          }
+        ],
+        "total_cost": 4,
+        "test_count": 2,
+        "diagnosis": "storage_disk",
+        "status": "conclusive",
+        "evidence_sufficiency": "sufficient",
+        "supporting_evidence": [
+          "disk_issue_confirmed"
+        ],
+        "contradicting_evidence": [
+          "driver_issue_confirmed"
+        ],
+        "outcome": "correct"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    },
+    {
+      "case_id": "eval_mixed_05",
+      "category": "mixed",
+      "name": "Tidak Konklusif Multi-Kategori",
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed",
+        "disk_issue_confirmed",
+        "memory_issue_confirmed"
+      ],
+      "ucs": {
+        "route": [
+          {
+            "step": 1,
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "healthy",
+            "cost": 2,
+            "cumulative_cost": 2.0
+          },
+          {
+            "step": 2,
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "all_ok",
+            "cost": 2,
+            "cumulative_cost": 4.0
+          },
+          {
+            "step": 3,
+            "test_id": "test_memory_diagnostic",
+            "test_name": "Tes memori yang membutuhkan restart",
+            "outcome": "no_errors",
+            "cost": 5,
+            "cumulative_cost": 9.0
+          }
+        ],
+        "total_cost": 9,
+        "test_count": 3,
+        "diagnosis": null,
+        "status": "inconclusive",
+        "evidence_sufficiency": "insufficient",
+        "supporting_evidence": [],
+        "contradicting_evidence": [
+          "disk_issue_confirmed",
+          "driver_issue_confirmed",
+          "memory_issue_confirmed"
+        ],
+        "outcome": "correct_inconclusive"
+      },
+      "checklist": {
+        "route": [
+          {
+            "test_id": "test_driver_status",
+            "test_name": "Cek status driver",
+            "outcome": "all_ok",
+            "cost": 2,
+            "cumulative_cost": 2.0,
+            "step": 1
+          },
+          {
+            "test_id": "test_smart_disk",
+            "test_name": "Cek SMART disk",
+            "outcome": "healthy",
+            "cost": 2,
+            "cumulative_cost": 4.0,
+            "step": 2
+          },
+          {
+            "test_id": "test_memory_diagnostic",
+            "test_name": "Tes memori yang membutuhkan restart",
+            "outcome": "no_errors",
+            "cost": 5,
+            "cumulative_cost": 9.0,
+            "step": 3
+          }
+        ],
+        "total_cost": 9,
+        "test_count": 3,
+        "diagnosis": null,
+        "status": "inconclusive",
+        "evidence_sufficiency": "insufficient",
+        "supporting_evidence": [],
+        "contradicting_evidence": [
+          "disk_issue_confirmed",
+          "driver_issue_confirmed",
+          "memory_issue_confirmed"
+        ],
+        "outcome": "correct_inconclusive"
+      },
+      "evidence_consistent": {
+        "ucs": true,
+        "checklist": true
+      }
+    }
+  ]
+}
