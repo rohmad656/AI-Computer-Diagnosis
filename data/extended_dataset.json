@@ -1,0 +1,4543 @@
+{
+  "schema_version": 1,
+  "description": "Dataset pengembangan 180 kasus simulasi. Seluruh kasus berlabel development:true dan source_type:expert_curated. Tidak ada klaim bahwa kasus ini merupakan insiden nyata.",
+  "methodology_note": "Kasus disusun secara deterministik dari aturan knowledge base (expert_curated). Distribusi outcome tidak diklaim sebagai distribusi statistik kejadian nyata.",
+  "category_distribution": {
+    "driver_software": 45,
+    "overheating": 45,
+    "storage_disk": 45,
+    "ram_memory": 45
+  },
+  "case_type_distribution": {
+    "simple": 36,
+    "cross_category": 56,
+    "uncertain": 56,
+    "contradictory": 30,
+    "misleading": 2
+  },
+  "cases": [
+    {
+      "id": "EXT_DRV_001",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — simple",
+      "initial_symptoms": [
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "yellow_bang",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_bsod_driver'] relevan dengan driver_software; hasil test_driver_status=yellow_bang mendukung driver_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_002",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — simple",
+      "initial_symptoms": [
+        "sym_device_manager_yellow"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "yellow_bang",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_device_manager_yellow'] relevan dengan driver_software; hasil test_driver_status=yellow_bang mendukung driver_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_003",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — simple",
+      "initial_symptoms": [
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_bsod_generic'] relevan dengan driver_software; hasil test_driver_status=yellow_bang mendukung driver_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_004",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — simple",
+      "initial_symptoms": [
+        "sym_disk_error"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_disk_error'] relevan dengan driver_software; hasil test_driver_status=yellow_bang mendukung driver_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_005",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — simple",
+      "initial_symptoms": [
+        "sym_system_crash"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_system_crash'] relevan dengan driver_software; hasil test_driver_status=yellow_bang mendukung driver_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_006",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — simple",
+      "initial_symptoms": [
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "yellow_bang",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_bsod_driver'] relevan dengan driver_software; hasil test_driver_status=yellow_bang mendukung driver_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_007",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — simple",
+      "initial_symptoms": [
+        "sym_device_manager_yellow"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "yellow_bang",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_device_manager_yellow'] relevan dengan driver_software; hasil test_driver_status=yellow_bang mendukung driver_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_008",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — simple",
+      "initial_symptoms": [
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_bsod_generic'] relevan dengan driver_software; hasil test_driver_status=yellow_bang mendukung driver_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_009",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — simple",
+      "initial_symptoms": [
+        "sym_disk_error"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_disk_error'] relevan dengan driver_software; hasil test_driver_status=yellow_bang mendukung driver_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_010",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_driver",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_011",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_device_manager_yellow",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_012",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_013",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_014",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_015",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_driver",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_016",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_device_manager_yellow",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_017",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_018",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_019",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_020",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_driver",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_021",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_device_manager_yellow",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_022",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_023",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — cross_category",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup driver_software dan kategori lain; hasil test_driver_status=yellow_bang hanya mengonfirmasi driver_software. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_DRV_024",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_driver",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_025",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_device_manager_yellow",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_026",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_027",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_028",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_029",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_driver",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_030",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_device_manager_yellow",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_031",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_032",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_033",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_034",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_driver",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_035",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_device_manager_yellow",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_036",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_037",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — uncertain",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_DRV_038",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — contradictory",
+      "initial_symptoms": [
+        "sym_bsod_driver",
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_driver_status=yellow_bang mendukung driver_issue_confirmed, sedangkan test_error_code_history=no_driver_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_DRV_039",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — contradictory",
+      "initial_symptoms": [
+        "sym_device_manager_yellow",
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_driver_status=yellow_bang mendukung driver_issue_confirmed, sedangkan test_error_code_history=no_driver_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_DRV_040",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — contradictory",
+      "initial_symptoms": [
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_driver_status=yellow_bang mendukung driver_issue_confirmed, sedangkan test_error_code_history=no_driver_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_DRV_041",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — contradictory",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_driver_status=yellow_bang mendukung driver_issue_confirmed, sedangkan test_error_code_history=no_driver_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_DRV_042",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — contradictory",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_driver_status=yellow_bang mendukung driver_issue_confirmed, sedangkan test_error_code_history=no_driver_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_DRV_043",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — contradictory",
+      "initial_symptoms": [
+        "sym_bsod_driver",
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_driver_status=yellow_bang mendukung driver_issue_confirmed, sedangkan test_error_code_history=no_driver_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_DRV_044",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — contradictory",
+      "initial_symptoms": [
+        "sym_device_manager_yellow",
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_driver_status=yellow_bang mendukung driver_issue_confirmed, sedangkan test_error_code_history=no_driver_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_OH_001",
+      "primary_category": "overheating",
+      "name": "Extended overheating — simple",
+      "initial_symptoms": [
+        "sym_shutdown_thermal"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_shutdown_thermal'] relevan dengan overheating; hasil test_cpu_gpu_temp=elevated mendukung high_temperature_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_002",
+      "primary_category": "overheating",
+      "name": "Extended overheating — simple",
+      "initial_symptoms": [
+        "sym_fan_loud_hot"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_fan_loud_hot'] relevan dengan overheating; hasil test_cpu_gpu_temp=elevated mendukung high_temperature_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_003",
+      "primary_category": "overheating",
+      "name": "Extended overheating — simple",
+      "initial_symptoms": [
+        "sym_system_crash"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_system_crash'] relevan dengan overheating; hasil test_cpu_gpu_temp=elevated mendukung high_temperature_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_004",
+      "primary_category": "overheating",
+      "name": "Extended overheating — simple",
+      "initial_symptoms": [
+        "sym_performance_degradation"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_performance_degradation'] relevan dengan overheating; hasil test_cpu_gpu_temp=elevated mendukung high_temperature_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_005",
+      "primary_category": "overheating",
+      "name": "Extended overheating — simple",
+      "initial_symptoms": [
+        "sym_shutdown_thermal"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_shutdown_thermal'] relevan dengan overheating; hasil test_cpu_gpu_temp=elevated mendukung high_temperature_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_006",
+      "primary_category": "overheating",
+      "name": "Extended overheating — simple",
+      "initial_symptoms": [
+        "sym_fan_loud_hot"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_fan_loud_hot'] relevan dengan overheating; hasil test_cpu_gpu_temp=elevated mendukung high_temperature_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_007",
+      "primary_category": "overheating",
+      "name": "Extended overheating — simple",
+      "initial_symptoms": [
+        "sym_system_crash"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_system_crash'] relevan dengan overheating; hasil test_cpu_gpu_temp=elevated mendukung high_temperature_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_008",
+      "primary_category": "overheating",
+      "name": "Extended overheating — simple",
+      "initial_symptoms": [
+        "sym_performance_degradation"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_performance_degradation'] relevan dengan overheating; hasil test_cpu_gpu_temp=elevated mendukung high_temperature_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_009",
+      "primary_category": "overheating",
+      "name": "Extended overheating — simple",
+      "initial_symptoms": [
+        "sym_shutdown_thermal"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_shutdown_thermal'] relevan dengan overheating; hasil test_cpu_gpu_temp=elevated mendukung high_temperature_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_010",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_shutdown_thermal",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_011",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_fan_loud_hot",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_012",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_013",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_014",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_shutdown_thermal",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_015",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_fan_loud_hot",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_016",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_017",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_018",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_shutdown_thermal",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_019",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_fan_loud_hot",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_020",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_021",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_022",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_shutdown_thermal",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_023",
+      "primary_category": "overheating",
+      "name": "Extended overheating — cross_category",
+      "initial_symptoms": [
+        "sym_fan_loud_hot",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "overheating",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup overheating dan kategori lain; hasil test_cpu_gpu_temp=elevated hanya mengonfirmasi overheating. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_OH_024",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_shutdown_thermal",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_025",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_fan_loud_hot",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_026",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_027",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_028",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_shutdown_thermal",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_029",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_fan_loud_hot",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_030",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_031",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_032",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_shutdown_thermal",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_033",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_fan_loud_hot",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_034",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_035",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_036",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_shutdown_thermal",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_037",
+      "primary_category": "overheating",
+      "name": "Extended overheating — uncertain",
+      "initial_symptoms": [
+        "sym_fan_loud_hot",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_OH_038",
+      "primary_category": "overheating",
+      "name": "Extended overheating — contradictory",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_shutdown_thermal"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed",
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif lintas kategori: suhu mendukung overheating, tetapi status driver dan riwayat error saling bertentangan (driver_issue_confirmed didukung sekaligus ditolak)."
+    },
+    {
+      "id": "EXT_OH_039",
+      "primary_category": "overheating",
+      "name": "Extended overheating — contradictory",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_shutdown_thermal"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed",
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif lintas kategori: suhu mendukung overheating, tetapi status driver dan riwayat error saling bertentangan (driver_issue_confirmed didukung sekaligus ditolak)."
+    },
+    {
+      "id": "EXT_OH_040",
+      "primary_category": "overheating",
+      "name": "Extended overheating — contradictory",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_shutdown_thermal"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed",
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif lintas kategori: suhu mendukung overheating, tetapi status driver dan riwayat error saling bertentangan (driver_issue_confirmed didukung sekaligus ditolak)."
+    },
+    {
+      "id": "EXT_OH_041",
+      "primary_category": "overheating",
+      "name": "Extended overheating — contradictory",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_shutdown_thermal"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed",
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif lintas kategori: suhu mendukung overheating, tetapi status driver dan riwayat error saling bertentangan (driver_issue_confirmed didukung sekaligus ditolak)."
+    },
+    {
+      "id": "EXT_OH_042",
+      "primary_category": "overheating",
+      "name": "Extended overheating — contradictory",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_shutdown_thermal"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed",
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif lintas kategori: suhu mendukung overheating, tetapi status driver dan riwayat error saling bertentangan (driver_issue_confirmed didukung sekaligus ditolak)."
+    },
+    {
+      "id": "EXT_OH_043",
+      "primary_category": "overheating",
+      "name": "Extended overheating — contradictory",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_shutdown_thermal"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed",
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif lintas kategori: suhu mendukung overheating, tetapi status driver dan riwayat error saling bertentangan (driver_issue_confirmed didukung sekaligus ditolak)."
+    },
+    {
+      "id": "EXT_OH_044",
+      "primary_category": "overheating",
+      "name": "Extended overheating — contradictory",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_shutdown_thermal"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed",
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif lintas kategori: suhu mendukung overheating, tetapi status driver dan riwayat error saling bertentangan (driver_issue_confirmed didukung sekaligus ditolak)."
+    },
+    {
+      "id": "EXT_OH_045",
+      "primary_category": "overheating",
+      "name": "Extended overheating — contradictory",
+      "initial_symptoms": [
+        "sym_system_crash",
+        "sym_shutdown_thermal"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "elevated",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "yellow_bang",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "no_driver_errors"
+      },
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed",
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif lintas kategori: suhu mendukung overheating, tetapi status driver dan riwayat error saling bertentangan (driver_issue_confirmed didukung sekaligus ditolak)."
+    },
+    {
+      "id": "EXT_STG_001",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — simple",
+      "initial_symptoms": [
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_disk_system_error_logs": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_disk_slow_freeze'] relevan dengan storage_disk; hasil test_smart_disk=warning mendukung disk_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_002",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — simple",
+      "initial_symptoms": [
+        "sym_chkdsk_auto"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_disk_system_error_logs": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_chkdsk_auto'] relevan dengan storage_disk; hasil test_smart_disk=warning mendukung disk_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_003",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — simple",
+      "initial_symptoms": [
+        "sym_disk_error"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_disk_error'] relevan dengan storage_disk; hasil test_smart_disk=warning mendukung disk_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_004",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — simple",
+      "initial_symptoms": [
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_bsod_generic'] relevan dengan storage_disk; hasil test_smart_disk=warning mendukung disk_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_005",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — simple",
+      "initial_symptoms": [
+        "sym_performance_degradation"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "warning",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_performance_degradation'] relevan dengan storage_disk; hasil test_smart_disk=warning mendukung disk_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_006",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — simple",
+      "initial_symptoms": [
+        "sym_disk_slow_freeze"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_disk_system_error_logs": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_disk_slow_freeze'] relevan dengan storage_disk; hasil test_smart_disk=warning mendukung disk_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_007",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — simple",
+      "initial_symptoms": [
+        "sym_chkdsk_auto"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_disk_system_error_logs": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_chkdsk_auto'] relevan dengan storage_disk; hasil test_smart_disk=warning mendukung disk_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_008",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — simple",
+      "initial_symptoms": [
+        "sym_disk_error"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_disk_error'] relevan dengan storage_disk; hasil test_smart_disk=warning mendukung disk_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_009",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — simple",
+      "initial_symptoms": [
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_bsod_generic'] relevan dengan storage_disk; hasil test_smart_disk=warning mendukung disk_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_010",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_disk_slow_freeze",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_011",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_chkdsk_auto",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_012",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_013",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_014",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_015",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_disk_slow_freeze",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_016",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_chkdsk_auto",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_017",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_018",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_019",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_020",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_disk_slow_freeze",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_021",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_chkdsk_auto",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_022",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_023",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "storage_disk",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup storage_disk dan kategori lain; hasil test_smart_disk=warning hanya mengonfirmasi storage_disk. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_STG_024",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_disk_slow_freeze",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_025",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_chkdsk_auto",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_026",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_027",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_028",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_029",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_disk_slow_freeze",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_030",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_chkdsk_auto",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_031",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_032",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_033",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_034",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_disk_slow_freeze",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_035",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_chkdsk_auto",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_036",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_037",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_STG_038",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — contradictory",
+      "initial_symptoms": [
+        "sym_disk_slow_freeze",
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "no_errors",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_smart_disk=warning mendukung disk_issue_confirmed, sedangkan test_disk_system_error_logs=no_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_STG_039",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — contradictory",
+      "initial_symptoms": [
+        "sym_chkdsk_auto",
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "no_errors",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_smart_disk=warning mendukung disk_issue_confirmed, sedangkan test_disk_system_error_logs=no_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_STG_040",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — contradictory",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "no_errors",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_smart_disk=warning mendukung disk_issue_confirmed, sedangkan test_disk_system_error_logs=no_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_STG_041",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — contradictory",
+      "initial_symptoms": [
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "no_errors",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_smart_disk=warning mendukung disk_issue_confirmed, sedangkan test_disk_system_error_logs=no_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_STG_042",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — contradictory",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "no_errors",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_smart_disk=warning mendukung disk_issue_confirmed, sedangkan test_disk_system_error_logs=no_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_STG_043",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — contradictory",
+      "initial_symptoms": [
+        "sym_disk_slow_freeze",
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "no_errors",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_smart_disk=warning mendukung disk_issue_confirmed, sedangkan test_disk_system_error_logs=no_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_STG_044",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — contradictory",
+      "initial_symptoms": [
+        "sym_chkdsk_auto",
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "no_errors",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_smart_disk=warning mendukung disk_issue_confirmed, sedangkan test_disk_system_error_logs=no_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_STG_045",
+      "primary_category": "storage_disk",
+      "name": "Extended storage_disk — contradictory",
+      "initial_symptoms": [
+        "sym_disk_error",
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "warning",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "no_errors",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_smart_disk=warning mendukung disk_issue_confirmed, sedangkan test_disk_system_error_logs=no_errors menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_RAM_001",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — simple",
+      "initial_symptoms": [
+        "sym_app_crash_random"
+      ],
+      "simulated_test_results": {
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_app_crash_random'] relevan dengan ram_memory; hasil test_memory_diagnostic=errors_found mendukung memory_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_002",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — simple",
+      "initial_symptoms": [
+        "sym_bsod_memory_management"
+      ],
+      "simulated_test_results": {
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_bsod_memory_management'] relevan dengan ram_memory; hasil test_memory_diagnostic=errors_found mendukung memory_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_003",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — simple",
+      "initial_symptoms": [
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_bsod_generic'] relevan dengan ram_memory; hasil test_memory_diagnostic=errors_found mendukung memory_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_004",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — simple",
+      "initial_symptoms": [
+        "sym_performance_degradation"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_performance_degradation'] relevan dengan ram_memory; hasil test_memory_diagnostic=errors_found mendukung memory_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_005",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — simple",
+      "initial_symptoms": [
+        "sym_app_crash_random"
+      ],
+      "simulated_test_results": {
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_app_crash_random'] relevan dengan ram_memory; hasil test_memory_diagnostic=errors_found mendukung memory_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_006",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — simple",
+      "initial_symptoms": [
+        "sym_bsod_memory_management"
+      ],
+      "simulated_test_results": {
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_bsod_memory_management'] relevan dengan ram_memory; hasil test_memory_diagnostic=errors_found mendukung memory_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_007",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — simple",
+      "initial_symptoms": [
+        "sym_bsod_generic"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_bsod_generic'] relevan dengan ram_memory; hasil test_memory_diagnostic=errors_found mendukung memory_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_008",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — simple",
+      "initial_symptoms": [
+        "sym_performance_degradation"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_performance_degradation'] relevan dengan ram_memory; hasil test_memory_diagnostic=errors_found mendukung memory_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_009",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — simple",
+      "initial_symptoms": [
+        "sym_app_crash_random"
+      ],
+      "simulated_test_results": {
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "simple",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus sederhana: gejala ['sym_app_crash_random'] relevan dengan ram_memory; hasil test_memory_diagnostic=errors_found mendukung memory_issue_confirmed. Tes lain dibuat inconclusive agar tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_010",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_app_crash_random",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_011",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_memory_management",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_012",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_013",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_014",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_app_crash_random",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_015",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_memory_management",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_016",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_017",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_018",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_app_crash_random",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_019",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_memory_management",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_020",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_021",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_022",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_app_crash_random",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_023",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — cross_category",
+      "initial_symptoms": [
+        "sym_bsod_memory_management",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "ram_memory",
+      "expected_status": "conclusive",
+      "case_type": "cross_category",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus lintas kategori: gejala mencakup ram_memory dan kategori lain; hasil test_memory_diagnostic=errors_found hanya mengonfirmasi ram_memory. Tes kategori lain tetap inconclusive sehingga tidak menambah evidence."
+    },
+    {
+      "id": "EXT_RAM_024",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_app_crash_random",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_025",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_memory_management",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_026",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_027",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_028",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_app_crash_random",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_029",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_memory_management",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_030",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_031",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_032",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_app_crash_random",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_033",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_memory_management",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_034",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_035",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_performance_degradation",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_cpu_gpu_temp": "inconclusive",
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_036",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_app_crash_random",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_037",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — uncertain",
+      "initial_symptoms": [
+        "sym_bsod_memory_management",
+        "sym_bsod_driver"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "inconclusive",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "uncertain",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus uncertain: seluruh pemeriksaan relevan menghasilkan outcome inconclusive (netral), sehingga tidak ada evidence yang cukup untuk diagnosis konklusif."
+    },
+    {
+      "id": "EXT_RAM_038",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — contradictory",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_app_crash_random"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "false_negative"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_memory_diagnostic=errors_found mendukung memory_issue_confirmed, sedangkan test_ram_usage_snapshot=false_negative menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_RAM_039",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — contradictory",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_app_crash_random"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "false_negative"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_memory_diagnostic=errors_found mendukung memory_issue_confirmed, sedangkan test_ram_usage_snapshot=false_negative menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_RAM_040",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — contradictory",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_app_crash_random"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "false_negative"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_memory_diagnostic=errors_found mendukung memory_issue_confirmed, sedangkan test_ram_usage_snapshot=false_negative menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_RAM_041",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — contradictory",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_app_crash_random"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "false_negative"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_memory_diagnostic=errors_found mendukung memory_issue_confirmed, sedangkan test_ram_usage_snapshot=false_negative menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_RAM_042",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — contradictory",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_app_crash_random"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "false_negative"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_memory_diagnostic=errors_found mendukung memory_issue_confirmed, sedangkan test_ram_usage_snapshot=false_negative menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_RAM_043",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — contradictory",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_app_crash_random"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "false_negative"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_memory_diagnostic=errors_found mendukung memory_issue_confirmed, sedangkan test_ram_usage_snapshot=false_negative menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_RAM_044",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — contradictory",
+      "initial_symptoms": [
+        "sym_bsod_generic",
+        "sym_app_crash_random"
+      ],
+      "simulated_test_results": {
+        "test_smart_disk": "inconclusive",
+        "test_driver_status": "inconclusive",
+        "test_disk_system_error_logs": "inconclusive",
+        "test_error_code_history": "inconclusive",
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "false_negative"
+      },
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "contradictory",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus kontradiktif: test_memory_diagnostic=errors_found mendukung memory_issue_confirmed, sedangkan test_ram_usage_snapshot=false_negative menolak evidence yang sama. State harus dikenali sebagai conflicting."
+    },
+    {
+      "id": "EXT_DRV_045",
+      "primary_category": "driver_software",
+      "name": "Extended driver_software — misleading",
+      "initial_symptoms": [
+        "sym_device_manager_yellow"
+      ],
+      "simulated_test_results": {
+        "test_driver_status": "false_positive",
+        "test_error_code_history": "inconclusive"
+      },
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [],
+      "expected_diagnosis": "driver_software",
+      "expected_status": "conclusive",
+      "case_type": "misleading",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus misleading false-positive: test_driver_status salah melaporkan masalah driver. Mapping eksplisit memperlakukan false_positive sebagai pendukung driver_issue_confirmed, sehingga UCS menyimpulkan driver_software. Sistem tidak dapat mendeteksi kebohongan tes; ini keterbatasan yang harus dilaporkan, bukan diubah labelnya agar akurasi naik."
+    },
+    {
+      "id": "EXT_RAM_045",
+      "primary_category": "ram_memory",
+      "name": "Extended ram_memory — misleading",
+      "initial_symptoms": [
+        "sym_app_crash_random"
+      ],
+      "simulated_test_results": {
+        "test_memory_diagnostic": "false_negative",
+        "test_ram_usage_snapshot": "inconclusive"
+      },
+      "expected_supporting_evidence": [],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_diagnosis": null,
+      "expected_status": "inconclusive",
+      "case_type": "misleading",
+      "development": true,
+      "source_type": "expert_curated",
+      "rationale": "Kasus misleading false-negative: test_memory_diagnostic salah melaporkan normal sehingga menolak memory_issue_confirmed. Sistem mengeliminasi ram_memory dan berhenti inconclusive; kerusakan RAM tidak terdeteksi (risiko false-negative nyata)."
+    }
+  ]
+}

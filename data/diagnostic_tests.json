@@ -8,7 +8,15 @@
       "category": "overheating",
       "description": "Memeriksa suhu CPU dan GPU menggunakan software monitoring (HWMonitor, Core Temp, atau BIOS).",
       "cost": 1,
-      "possible_outcomes": ["normal", "elevated", "critical"],
+      "possible_outcomes": ["normal", "elevated", "critical", "inconclusive", "false_positive", "false_negative"],
+      "outcome_types": {
+        "normal": "normal",
+        "elevated": "abnormal",
+        "critical": "abnormal",
+        "inconclusive": "uncertain",
+        "false_positive": "misleading",
+        "false_negative": "misleading"
+      },
       "evidence_mapping": {
         "normal": {
           "supports": [],
@@ -21,6 +29,18 @@
         "critical": {
           "supports": ["high_temperature_confirmed"],
           "contradicts": []
+        },
+        "inconclusive": {
+          "supports": [],
+          "contradicts": []
+        },
+        "false_positive": {
+          "supports": ["high_temperature_confirmed"],
+          "contradicts": []
+        },
+        "false_negative": {
+          "supports": [],
+          "contradicts": ["high_temperature_confirmed"]
         }
       },
       "config_notes": {
@@ -33,7 +53,15 @@
       "category": "storage_disk",
       "description": "Memeriksa atribut S.M.A.R.T. drive menggunakan tool seperti CrystalDiskInfo, smartctl, atau wmic.",
       "cost": 2,
-      "possible_outcomes": ["healthy", "warning", "bad"],
+      "possible_outcomes": ["healthy", "warning", "bad", "inconclusive", "false_positive", "false_negative"],
+      "outcome_types": {
+        "healthy": "normal",
+        "warning": "abnormal",
+        "bad": "abnormal",
+        "inconclusive": "uncertain",
+        "false_positive": "misleading",
+        "false_negative": "misleading"
+      },
       "evidence_mapping": {
         "healthy": {
           "supports": [],
@@ -46,6 +74,18 @@
         "bad": {
           "supports": ["disk_issue_confirmed"],
           "contradicts": []
+        },
+        "inconclusive": {
+          "supports": [],
+          "contradicts": []
+        },
+        "false_positive": {
+          "supports": ["disk_issue_confirmed"],
+          "contradicts": []
+        },
+        "false_negative": {
+          "supports": [],
+          "contradicts": ["disk_issue_confirmed"]
         }
       },
       "config_notes": {
@@ -58,7 +98,15 @@
       "category": "driver_software",
       "description": "Memeriksa Device Manager untuk tanda error, driver tidak terpasang, atau versi driver bermasalah.",
       "cost": 2,
-      "possible_outcomes": ["all_ok", "yellow_bang", "error_code"],
+      "possible_outcomes": ["all_ok", "yellow_bang", "error_code", "inconclusive", "false_positive", "false_negative"],
+      "outcome_types": {
+        "all_ok": "normal",
+        "yellow_bang": "abnormal",
+        "error_code": "abnormal",
+        "inconclusive": "uncertain",
+        "false_positive": "misleading",
+        "false_negative": "misleading"
+      },
       "evidence_mapping": {
         "all_ok": {
           "supports": [],
@@ -71,6 +119,18 @@
         "error_code": {
           "supports": ["driver_issue_confirmed"],
           "contradicts": []
+        },
+        "inconclusive": {
+          "supports": [],
+          "contradicts": []
+        },
+        "false_positive": {
+          "supports": ["driver_issue_confirmed"],
+          "contradicts": []
+        },
+        "false_negative": {
+          "supports": [],
+          "contradicts": ["driver_issue_confirmed"]
         }
       }
     },
@@ -80,7 +140,12 @@
       "category": "storage_disk",
       "description": "Memeriksa Event Viewer (System log) untuk error terkait disk: Event ID 7, 9, 11, 51, 153, atau NTFS warnings.",
       "cost": 3,
-      "possible_outcomes": ["no_errors", "disk_errors_present"],
+      "possible_outcomes": ["no_errors", "disk_errors_present", "inconclusive"],
+      "outcome_types": {
+        "no_errors": "normal",
+        "disk_errors_present": "abnormal",
+        "inconclusive": "uncertain"
+      },
       "evidence_mapping": {
         "no_errors": {
           "supports": [],
@@ -88,6 +153,10 @@
         },
         "disk_errors_present": {
           "supports": ["disk_issue_confirmed"],
+          "contradicts": []
+        },
+        "inconclusive": {
+          "supports": [],
           "contradicts": []
         }
       }
@@ -98,7 +167,14 @@
       "category": "driver_software",
       "description": "Menganalisis kode error BSOD (bug check code) dari minidump atau Reliability Monitor, dan mencari pola error driver.",
       "cost": 3,
-      "possible_outcomes": ["no_driver_errors", "driver_errors_found"],
+      "possible_outcomes": ["no_driver_errors", "driver_errors_found", "inconclusive", "false_positive", "false_negative"],
+      "outcome_types": {
+        "no_driver_errors": "normal",
+        "driver_errors_found": "abnormal",
+        "inconclusive": "uncertain",
+        "false_positive": "misleading",
+        "false_negative": "misleading"
+      },
       "evidence_mapping": {
         "no_driver_errors": {
           "supports": [],
@@ -107,6 +183,18 @@
         "driver_errors_found": {
           "supports": ["driver_issue_confirmed"],
           "contradicts": []
+        },
+        "inconclusive": {
+          "supports": [],
+          "contradicts": []
+        },
+        "false_positive": {
+          "supports": ["driver_issue_confirmed"],
+          "contradicts": []
+        },
+        "false_negative": {
+          "supports": [],
+          "contradicts": ["driver_issue_confirmed"]
         }
       }
     },
@@ -116,7 +204,14 @@
       "category": "ram_memory",
       "description": "Menjalankan Windows Memory Diagnostic (mdsched.exe) atau MemTest86 yang memerlukan restart sistem.",
       "cost": 5,
-      "possible_outcomes": ["no_errors", "errors_found"],
+      "possible_outcomes": ["no_errors", "errors_found", "inconclusive", "false_positive", "false_negative"],
+      "outcome_types": {
+        "no_errors": "normal",
+        "errors_found": "abnormal",
+        "inconclusive": "uncertain",
+        "false_positive": "misleading",
+        "false_negative": "misleading"
+      },
       "evidence_mapping": {
         "no_errors": {
           "supports": [],
@@ -125,6 +220,55 @@
         "errors_found": {
           "supports": ["memory_issue_confirmed"],
           "contradicts": []
+        },
+        "inconclusive": {
+          "supports": [],
+          "contradicts": []
+        },
+        "false_positive": {
+          "supports": ["memory_issue_confirmed"],
+          "contradicts": []
+        },
+        "false_negative": {
+          "supports": [],
+          "contradicts": ["memory_issue_confirmed"]
+        }
+      }
+    },
+    {
+      "id": "test_ram_usage_snapshot",
+      "name": "Pemeriksaan Penggunaan RAM",
+      "category": "ram_memory",
+      "description": "Mengamati penggunaan RAM melalui Task Manager tanpa menjalankan tes diagnostik berat.",
+      "cost": 1,
+      "possible_outcomes": ["normal", "high_usage", "inconclusive", "false_positive", "false_negative"],
+      "outcome_types": {
+        "normal": "normal",
+        "high_usage": "abnormal",
+        "inconclusive": "uncertain",
+        "false_positive": "misleading",
+        "false_negative": "misleading"
+      },
+      "evidence_mapping": {
+        "normal": {
+          "supports": [],
+          "contradicts": []
+        },
+        "high_usage": {
+          "supports": ["high_ram_usage_confirmed"],
+          "contradicts": []
+        },
+        "inconclusive": {
+          "supports": [],
+          "contradicts": []
+        },
+        "false_positive": {
+          "supports": ["memory_issue_confirmed"],
+          "contradicts": []
+        },
+        "false_negative": {
+          "supports": [],
+          "contradicts": ["memory_issue_confirmed"]
         }
       }
     }

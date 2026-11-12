@@ -8,7 +8,8 @@
       "description": "Komputer sering mati mendadak saat rendering video dan kipas bersuara kencang.",
       "initial_symptoms": ["sym_shutdown_thermal", "sym_fan_loud_hot"],
       "simulated_test_results": {
-        "test_cpu_gpu_temp": "critical"
+        "test_cpu_gpu_temp": "critical",
+        "test_ram_usage_snapshot": "normal"
       },
       "expected_diagnosis": "overheating",
       "expected_status": "conclusive"
@@ -19,7 +20,8 @@
       "description": "BSOD berulang dengan indikasi driver display bermasalah.",
       "initial_symptoms": ["sym_bsod_driver"],
       "simulated_test_results": {
-        "test_driver_status": "yellow_bang"
+        "test_driver_status": "yellow_bang",
+        "test_ram_usage_snapshot": "normal"
       },
       "expected_diagnosis": "driver_software",
       "expected_status": "conclusive"
@@ -30,7 +32,8 @@
       "description": "Akses folder lambat dan Windows otomatis menjalankan scanning drive.",
       "initial_symptoms": ["sym_disk_slow_freeze", "sym_chkdsk_auto"],
       "simulated_test_results": {
-        "test_smart_disk": "warning"
+        "test_smart_disk": "warning",
+        "test_ram_usage_snapshot": "normal"
       },
       "expected_diagnosis": "storage_disk",
       "expected_status": "conclusive"
@@ -41,7 +44,8 @@
       "description": "BSOD MEMORY_MANAGEMENT dan crash aplikasi acak.",
       "initial_symptoms": ["sym_bsod_memory_management", "sym_app_crash_random"],
       "simulated_test_results": {
-        "test_memory_diagnostic": "errors_found"
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "high_usage"
       },
       "expected_diagnosis": "ram_memory",
       "expected_status": "conclusive"
@@ -52,7 +56,8 @@
       "description": "Gejala ada tetapi seluruh hasil tes diagnostik menyatakan normal.",
       "initial_symptoms": ["sym_shutdown_thermal"],
       "simulated_test_results": {
-        "test_cpu_gpu_temp": "normal"
+        "test_cpu_gpu_temp": "normal",
+        "test_ram_usage_snapshot": "normal"
       },
       "expected_diagnosis": null,
       "expected_status": "inconclusive"

@@ -11,6 +11,7 @@ Dokumen ini merupakan laporan teknis komprehensif dan faktual mengenai arsitektu
 3. [Formulasi Masalah Pencarian dalam UCS](#3-formulasi-masalah-pencarian-dalam-ucs)
 4. [Mekanisme Algoritma Uniform Cost Search (`core/ucs.py`)](#4-mekanisme-algoritma-uniform-cost-search-coreucspy)
 5. [Prinsip Favourable Outcome dan Online Replanning](#5-prinsip-favourable-outcome-dan-online-replanning)
+5A. [Konfirmasi Diagnosis dan Proteksi False-Positive](#5a-konfirmasi-diagnosis-dan-proteksi-false-positive)
 6. [Struktur Basis Pengetahuan (Knowledge Base)](#6-struktur-basis-pengetahuan-knowledge-base)
 7. [Desain Antarmuka Pengguna (Streamlit UI)](#7-desain-antarmuka-pengguna-streamlit-ui)
 8. [Metodologi Evaluasi Eksperimental (UCS vs Fixed-Order Checklist)](#8-metodologi-evaluasi-eksperimental-ucs-vs-fixed-order-checklist)
@@ -45,7 +46,7 @@ AI-Computer-Diagnosis/
 │   └── test_cases.json            # 4 skenario uji integrasi dasar sistem
 ├── tests/                         # Lapisan pengujian otomatis (automated unit testing)
 │   ├── test_ucs.py                # 9 unit test untuk verifikasi algoritma UCS generik
-│   ├── test_diagnosis.py          # 32 unit test untuk mesin diagnosis dan knowledge base
+│   ├── test_diagnosis.py          # 60 unit test untuk mesin diagnosis dan knowledge base
 │   ├── test_symptom_matcher.py    # 13 unit test pencocokan teks dan validasi BSOD
 │   ├── test_user_symptoms.py      # 13 unit test gejala tambahan & integrasi sesi
 │   └── test_reset.py              # 13 unit test reset sesi & flag feedback UI
@@ -159,12 +160,14 @@ Pencarian langkah diagnosis diformulasikan sebagai permasalahan pencarian jalur 
 
 1. **State ($s$)**:
    Direpresentasikan secara formal melalui kelas `DiagnosisState` yang *immutable* (menggunakan tipe data `frozenset`):
-   $$s = \langle S_{init}, T_{done}, R, E_{sup}, E_{contra}, C_{pos}, g \rangle$$
+   $$s = \langle S_{init}, T_{done}, R, E_{sup}, E_{contra}, E_{trust}, E_{mis}, C_{pos}, g \rangle$$
    - $S_{init}$: Himpunan gejala awal yang dipilih pengguna (`initial_symptoms`).
    - $T_{done}$: Himpunan ID pemeriksaan yang telah diselesaikan (`performed_tests`).
    - $R$: Himpunan pasangan terurut luaran pemeriksaan $(t, o)$ (`test_results`).
-   - $E_{sup}$: Himpunan kunci bukti yang terkonfirmasi mendukung (`supporting_evidence`).
+   - $E_{sup}$: Himpunan kunci bukti pendukung (`supporting_evidence`), mencakup bukti dari outcome normal, abnormal, maupun misleading.
    - $E_{contra}$: Himpunan kunci bukti yang bertentangan/kontradiksi (`contradicting_evidence`).
+   - $E_{trust}$: Himpunan kunci bukti yang boleh dipakai sebagai **konfirmasi** (`trusted_support`), yaitu hanya bukti dari outcome non-misleading.
+   - $E_{mis}$: Himpunan kunci bukti dari outcome **misleading** (`misleading_support`); berstatus indikasi awal, bukan konfirmasi.
    - $C_{pos}$: Himpunan kategori masalah yang masih relevan/mungkin (`possible_categories`).
    - $g$: Biaya kumulatif saat ini (`cumulative_cost`).
 
@@ -177,12 +180,16 @@ Pencarian langkah diagnosis diformulasikan sebagai permasalahan pencarian jalur 
    - $R' = R \cup \{(t, o)\}$
    - $E_{sup}' = E_{sup} \cup \text{evidence\_mapping}[o].supports$
    - $E_{contra}' = E_{contra} \cup \text{evidence\_mapping}[o].contradicts$
+   - Jika `outcome_type(o) == "misleading"`: $E_{mis}' = E_{mis} \cup \text{evidence\_mapping}[o].supports$ dan $E_{trust}' = E_{trust}$ (tidak bertambah).
+   - Jika `outcome_type(o) == "uncertain"`: tidak ada bukti yang ditambahkan (dicatat di `neutral_evidence`).
+   - Jika `outcome_type(o)` normal/abnormal: $E_{trust}' = E_{trust} \cup \text{evidence\_mapping}[o].supports$.
    - $C_{pos}' = \{ c \in C_{pos} \mid \text{evidence\_keys}(c) \cap E_{contra}' = \emptyset \}$
    - $g(s') = g(s) + \text{cost}(t)$
 
 4. **Goal Test (`is_goal_state`)**:
-   Suatu state $s$ dinyatakan mencapai tujuan (*goal state*) jika terdapat setidaknya satu kategori $c \in C_{pos}$ yang bukti pendukungnya telah lengkap dan tidak memiliki bukti pertentangan:
-   $$\text{is\_goal}(s) \iff \exists c \in C_{pos} : (\text{required\_evidence}(c) \subseteq E_{sup}) \land (\text{required\_evidence}(c) \cap E_{contra} = \emptyset)$$
+   Suatu state $s$ dinyatakan mencapai tujuan (*goal state*) jika terdapat setidaknya satu kategori $c \in C_{pos}$ yang bukti **konfirmasinya** telah lengkap dan tidak memiliki bukti pertentangan:
+   $$\text{is\_goal}(s) \iff \neg\,\text{conflict}(s) \land \exists c \in C_{pos} : (\text{required\_evidence}(c) \subseteq E_{trust}) \land (\text{required\_evidence}(c) \cap E_{contra} = \emptyset)$$
+   Perhatikan bahwa syarat konfirmasi memakai $E_{trust}$, bukan $E_{sup}$. Bukti dari outcome misleading ($E_{mis}$) tidak pernah memenuhi goal test.
 
 5. **Path Cost ($g(n)$)**:
    Fungsi biaya lintasan adalah akumulasi bobot biaya relatif dari setiap pemeriksaan yang dilakukan di sepanjang jalur pencarian:
@@ -237,6 +244,57 @@ Dalam konteks diagnosis interaktif, terdapat perbedaan fundamental antara *penca
    - Ketika pengguna memasukkan luaran observasi riil melalui `apply_test_result()`, state sistem diperbarui sesuai fakta sebenarnya.
    - Apabila luaran riil ternyata negatif/normal (kontradiksi), kategori terkait langsung dieliminasi dari `possible_categories`.
    - Pada siklus berikutnya, UCS dipanggil ulang dari state baru tersebut (*re-planning*) untuk mencari jalur optimal baru di antara kategori yang masih tersisa.
+
+---
+
+## 5A. Konfirmasi Diagnosis dan Proteksi False-Positive
+
+Mekanisme konfirmasi dirancang agar sistem tidak menyimpulkan diagnosis final hanya dari indikasi awal yang berpotensi menyesatkan (*misleading outcome*).
+
+### 5A.1. Supporting Evidence vs Confirmation Evidence
+
+State membedakan tiga lapis bukti:
+
+| Lapis | Field State | Sumber | Boleh Menjadi Dasar Diagnosis Final? |
+| :--- | :--- | :--- | :---: |
+| Bukti pendukung | `supporting_evidence` ($E_{sup}$) | Outcome normal, abnormal, dan misleading | Tidak (informatif) |
+| Bukti konfirmasi | `trusted_support` ($E_{trust}$) | Outcome normal dan abnormal saja | Ya |
+| Indikasi awal | `misleading_support` ($E_{mis}$) | Outcome misleading | Tidak |
+
+`is_category_confirmed()` hanya memakai `trusted_support`. Konsekuensinya, satu outcome misleading tidak dapat sendirian menghasilkan diagnosis konklusif, tetapi tetap tercatat di `supporting_evidence` dan `misleading_support` agar transparan untuk pengguna.
+
+### 5A.2. Penanganan Outcome Misleading
+
+- Outcome bertipe `misleading` menambahkan evidence ke `supporting_evidence` **dan** `misleading_support`, tetapi **tidak** ke `trusted_support`.
+- Goal test tetap `False` selama kategori terkait hanya memiliki bukti misleading, sehingga UCS melanjutkan ke pemeriksaan relevan berikutnya.
+- Jika pemeriksaan lanjutan menghasilkan bukti independen yang konsisten (normal/abnormal), kategori dapat terkonfirmasi seperti biasa.
+- Jika pemeriksaan lanjutan menghasilkan bukti bertentangan, kategori ditandai `conflicting` dan hasil akhirnya `inconclusive`.
+
+### 5A.3. Outcome Uncertain
+
+- Outcome bertipe `uncertain` (mis. `inconclusive`) tidak menambah `supporting_evidence` maupun `trusted_support`.
+- Outcome tersebut dicatat pada `neutral_evidence` sebagai `(test_id, outcome)` dan tidak dianggap sebagai konfirmasi.
+- Sistem tetap dapat melanjutkan ke pemeriksaan lain yang masih relevan.
+
+### 5A.4. Kapan Sistem Melanjutkan Pemeriksaan
+
+Selama masih terdapat pemeriksaan relevan di `possible_categories` (`get_available_tests()` tidak kosong) dan state belum mencapai goal test, UCS akan merekomendasikan pemeriksaan berikutnya. Ini berlaku juga ketika `trusted_support` belum terbentuk (mis. setelah outcome misleading atau uncertain).
+
+### 5A.5. Kapan Sistem Berhenti Inconclusive
+
+`evaluate_diagnosis()` mengembalikan status `inconclusive` ketika salah satu kondisi berikut terpenuhi:
+
+1. Terdapat kategori dengan evidence internal yang bertentangan (`get_conflicting_categories()` tidak kosong).
+2. Tidak ada pemeriksaan relevan yang tersisa (`get_pending_tests()` kosong) sementara tidak ada kategori yang terkonfirmasi lengkap.
+
+Dengan aturan ini, sistem tidak memaksa diagnosis saat bukti tidak cukup; sistem berhenti secara aman dengan rekomendasi konsultasi teknisi.
+
+### 5A.6. Keterbatasan Simulasi
+
+- Mekanisme ini bergantung pada metadata `outcome_types` pada `data/diagnostic_tests.json` yang menandai setiap luaran sebagai `normal`, `abnormal`, `uncertain`, atau `misleading`.
+- Sistem **tidak** dapat mendeteksi kebohongan alat ukur nyata. Jika sumber simulasi menandai outcome misleading sebagai abnormal, sistem akan memperlakukannya sebagai konfirmasi biasa.
+- Pada evaluasi dataset extended yang dihasilkan otomatis, sebagian kasus kontradiktif punya luaran pembantah yang muncul setelah UCS mencapai goal state. Karena evaluasi memakai *early-stopping* UCS, bukti pembantah tersebut tidak pernah teramati. Kasus seperti ini dilaporkan sebagai *observation-limited conclusive* (bukan *false positive*), karena sistem tidak pernah menerima bukti yang bertentangan selama eksekusi.
+- Penandaan `misleading` sepenuhnya bergantung pada asumsi kurator data, bukan verifikasi fisik perangkat keras.
 
 ---
 
@@ -359,9 +417,9 @@ Perintah eksekusi:
 ```powershell
 python -m pytest -v
 ```
-**Hasil**: **80 passed** dari 80 skenario pengujian (tingkat kelulusan 100%, durasi ~0.5 detik).
+**Hasil**: **108 passed** dari 108 skenario pengujian (tingkat kelulusan 100%, durasi ±2 detik).
 - 9 pengujian pada `tests/test_ucs.py` memverifikasi ketepatan penemuan jalur minimum, penghindaran siklus, penanganan batas biaya, kestabilan SearchNode, dan ketercapaian goal.
-- 32 pengujian pada `tests/test_diagnosis.py` memverifikasi integritas Knowledge Base, inisialisasi state, transisi bukti, akumulasi biaya, pencegahan eksekusi berulang, dan evaluasi konklusif/inkonklusif.
+- 60 pengujian pada `tests/test_diagnosis.py` memverifikasi integritas Knowledge Base, inisialisasi state, transisi bukti, akumulasi biaya, pencegahan eksekusi berulang, evaluasi konklusif/inkonklusif, proteksi misleading evidence, dan konfirmasi `trusted_support`.
 - 13 pengujian pada `tests/test_symptom_matcher.py` memverifikasi pencocokan teks dan validasi kode BSOD.
 - 13 pengujian pada `tests/test_user_symptoms.py` memverifikasi mekanisme gejala tambahan (pembuatan ID stabil, konfirmasi kategori, integrasi sesi, UCS multi-kategori).
 - 13 pengujian pada `tests/test_reset.py` memverifikasi mekanisme reset sesi (pembersihan state terpusat, pengujian flag feedback UI, skenario reset pasca-diagnosis, isolasi antar sesi).
@@ -372,25 +430,25 @@ Tabel berikut bersumber langsung dari `evaluation/results/results_per_case.csv`:
 
 | Case ID | Kategori Skenario | Expected Diagnosis / Status | Luaran UCS (Status/Outcome) | Luaran Checklist (Status/Outcome) | Cost UCS | Cost Checklist |
 | :--- | :--- | :--- | :--- | :--- | :---: | :---: |
-| `eval_oh_01` | `overheating` | `overheating` / conclusive | `overheating` / correct | `overheating` / correct | 1.0 | 1.0 |
-| `eval_oh_02` | `overheating` | `overheating` / conclusive | `overheating` / correct | `overheating` / correct | 1.0 | 1.0 |
+| `eval_oh_01` | `overheating` | `overheating` / conclusive | `overheating` / correct_conclusive | `overheating` / correct_conclusive | 1.0 | 1.0 |
+| `eval_oh_02` | `overheating` | `overheating` / conclusive | `overheating` / correct_conclusive | `overheating` / correct_conclusive | 1.0 | 1.0 |
 | `eval_oh_03` | `overheating` | `None` / inconclusive | `None` / correct_inconclusive | `None` / correct_inconclusive | 1.0 | 1.0 |
-| `eval_oh_04` | `overheating` | `overheating` / conclusive | `overheating` / correct | `overheating` / correct | 1.0 | 1.0 |
-| `eval_drv_01` | `driver_software` | `driver_software` / conclusive | `driver_software` / correct | `driver_software` / correct | 2.0 | 2.0 |
-| `eval_drv_02` | `driver_software` | `driver_software` / conclusive | `driver_software` / correct | `driver_software` / correct | 2.0 | 2.0 |
+| `eval_oh_04` | `overheating` | `overheating` / conclusive | `overheating` / correct_conclusive | `overheating` / correct_conclusive | 1.0 | 1.0 |
+| `eval_drv_01` | `driver_software` | `driver_software` / conclusive | `driver_software` / correct_conclusive | `driver_software` / correct_conclusive | 2.0 | 2.0 |
+| `eval_drv_02` | `driver_software` | `driver_software` / conclusive | `driver_software` / correct_conclusive | `driver_software` / correct_conclusive | 2.0 | 2.0 |
 | `eval_drv_03` | `driver_software` | `None` / inconclusive | `None` / correct_inconclusive | `None` / correct_inconclusive | 2.0 | 2.0 |
-| `eval_drv_04` | `driver_software` | `driver_software` / conclusive | `driver_software` / correct | `driver_software` / correct | 4.0 | 2.0 |
-| `eval_stg_01` | `storage_disk` | `storage_disk` / conclusive | `storage_disk` / correct | `storage_disk` / correct | 2.0 | 2.0 |
-| `eval_stg_02` | `storage_disk` | `storage_disk` / conclusive | `storage_disk` / correct | `storage_disk` / correct | 2.0 | 2.0 |
+| `eval_drv_04` | `driver_software` | `driver_software` / conclusive | `driver_software` / correct_conclusive | `driver_software` / correct_conclusive | 4.0 | 2.0 |
+| `eval_stg_01` | `storage_disk` | `storage_disk` / conclusive | `storage_disk` / correct_conclusive | `storage_disk` / correct_conclusive | 2.0 | 2.0 |
+| `eval_stg_02` | `storage_disk` | `storage_disk` / conclusive | `storage_disk` / correct_conclusive | `storage_disk` / correct_conclusive | 2.0 | 2.0 |
 | `eval_stg_03` | `storage_disk` | `None` / inconclusive | `None` / correct_inconclusive | `None` / correct_inconclusive | 2.0 | 2.0 |
-| `eval_stg_04` | `storage_disk` | `storage_disk` / conclusive | `storage_disk` / correct | `storage_disk` / correct | 2.0 | 2.0 |
-| `eval_ram_01` | `ram_memory` | `ram_memory` / conclusive | `ram_memory` / correct | `ram_memory` / correct | 5.0 | 5.0 |
+| `eval_stg_04` | `storage_disk` | `storage_disk` / conclusive | `storage_disk` / correct_conclusive | `storage_disk` / correct_conclusive | 2.0 | 2.0 |
+| `eval_ram_01` | `ram_memory` | `ram_memory` / conclusive | `ram_memory` / correct_conclusive | `ram_memory` / correct_conclusive | 5.0 | 5.0 |
 | `eval_ram_02` | `ram_memory` | `None` / inconclusive | `None` / correct_inconclusive | `None` / correct_inconclusive | 5.0 | 5.0 |
-| `eval_ram_03` | `ram_memory` | `ram_memory` / conclusive | `ram_memory` / correct | `ram_memory` / correct | 7.0 | 7.0 |
-| `eval_mixed_01` | `driver_software` | `driver_software` / conclusive | `driver_software` / correct | `driver_software` / correct | 3.0 | 3.0 |
-| `eval_mixed_02` | `storage_disk` | `storage_disk` / conclusive | `storage_disk` / correct | `storage_disk` / correct | 2.0 | 4.0 |
-| `eval_mixed_03` | `overheating` | `overheating` / conclusive | `overheating` / correct | `overheating` / correct | 1.0 | 1.0 |
-| `eval_mixed_04` | `storage_disk` | `storage_disk` / conclusive | `storage_disk` / correct | `storage_disk` / correct | 2.0 | 4.0 |
+| `eval_ram_03` | `ram_memory` | `ram_memory` / conclusive | `ram_memory` / correct_conclusive | `ram_memory` / correct_conclusive | 7.0 | 7.0 |
+| `eval_mixed_01` | `driver_software` | `driver_software` / conclusive | `driver_software` / correct_conclusive | `driver_software` / correct_conclusive | 3.0 | 3.0 |
+| `eval_mixed_02` | `storage_disk` | `storage_disk` / conclusive | `storage_disk` / correct_conclusive | `storage_disk` / correct_conclusive | 2.0 | 4.0 |
+| `eval_mixed_03` | `overheating` | `overheating` / conclusive | `overheating` / correct_conclusive | `overheating` / correct_conclusive | 1.0 | 1.0 |
+| `eval_mixed_04` | `storage_disk` | `storage_disk` / conclusive | `storage_disk` / correct_conclusive | `storage_disk` / correct_conclusive | 2.0 | 4.0 |
 | `eval_mixed_05` | `mixed` | `None` / inconclusive | `None` / correct_inconclusive | `None` / correct_inconclusive | 9.0 | 9.0 |
 
 ### 9.3. Tabel Ringkasan Metrik Komparatif
@@ -402,19 +460,85 @@ Tabel berikut bersumber langsung dari `evaluation/results/summary_metrics.csv` d
 | **Total Kasus Pengujian** | 20 | 20 | Identik |
 | **Diagnosis Konklusif Sesuai Label** | 15 kasus | 15 kasus | Identik |
 | **Inkonklusif Sesuai Label** | 5 kasus | 5 kasus | Identik |
-| **Salah Diagnosis (*Wrong Diagnosis*)** | 0 kasus | 0 kasus | Identik |
-| **Hasil Negatif Palsu (*False Negative*)** | 0 kasus | 0 kasus | Identik |
-| **Hasil Positif Palsu (*False Positive*)** | 0 kasus | 0 kasus | Identik |
-| **Tingkat Akurasi terhadap Label Simulasi** | **100.00%** | **100.00%** | Keduanya konsisten dengan basis aturan |
+| **Salah Diagnosis (*Incorrect Conclusive*)** | 0 kasus | 0 kasus | Identik |
+| **Kasus Konklusif Terlewat (*Missed Conclusive*)** | 0 kasus | 0 kasus | Identik |
+| **Hasil Negatif Palsu (*False Negative*, diturunkan dari *missed conclusive*)** | 0 kasus | 0 kasus | Identik |
+| **Hasil Positif Palsu (*False Positive*, bukti kontradiktif benar-benar teramati)** | 0 kasus | 0 kasus | Identik |
+| **Konklusif Terbatas Observasi (*Observation-Limited Conclusive*)** | 0 kasus | 0 kasus | Identik |
+| **Tingkat Akurasi terhadap Label Simulasi (*Overall Correct Rate*)** | **100.00%** | **100.00%** | Keduanya konsisten dengan basis aturan |
 | **Rata-rata Cumulative Cost (Seluruh 20 Kasus)** | **2.80** | **2.90** | UCS lebih hemat 0.10 poin biaya |
 | **Rata-rata Cost Kasus Konklusif (15 Kasus)** | **2.47** | **2.60** | UCS lebih hemat 0.13 poin biaya |
 | **Rata-rata Jumlah Pemeriksaan per Kasus** | **1.25** | **1.30** | UCS membutuhkan langkah lebih sedikit |
-| **Ketahanan Bukti Bertentangan (*Conflict Cases*)** | **13 / 13 (100%)** | **13 / 13 (100%)** | Keduanya berhasil mengeliminasi kontradiksi |
+| **Kasus Label Kontradiksi yang Berakhir Inkonklusif** | **5 / 13** | **5 / 13** | Kontradiksi teramati pada 5 kasus |
+| **Kontradiksi Teramati yang Berakhir Inkonklusif** | **5 / 8** | **5 / 9** | Sistem menolak menyimpulkan saat konflik teramati |
 | **Konsistensi Bukti Aktual terhadap Expected** | **20 / 20 (100%)** | **20 / 20 (100%)** | Bukti yang dihasilkan sepenuhnya valid |
 
 ### 9.4. Analisis Perbedaan Performa
 - **Keunggulan Efisiensi UCS**: Pada kasus multi-gejala seperti `eval_mixed_02` dan `eval_mixed_04`, UCS mampu langsung mengidentifikasi pemeriksaan disk (`test_smart_disk`, cost 2) sebagai jalur optimal termurah, sedangkan Checklist yang memiliki urutan kaku terlebih dahulu menguji status driver (`test_driver_status`, cost 2) sebelum memeriksa disk, sehingga Checklist menghabiskan total cost 4.0 berbanding UCS yang hanya 2.0.
 - **Kondisi Tie-Breaker**: Pada kasus `eval_drv_04` (kombinasi gejala driver dan disk yang keduanya memiliki uji berbiaya 2), UCS mendahulukan pemeriksaan disk karena urutan pendaftaran pengujian dalam list, menghabiskan cost 4.0, sedangkan checklist secara kebetulan mendahulukan driver (cost 2.0). Secara agregat pada 20 kasus, UCS tetap unggul dalam efisiensi rata-rata biaya (2.80 vs 2.90).
+
+### 9.5. Evaluasi Dataset Extended dan Gabungan
+
+Selain dataset baseline 20 kasus, evaluasi juga dijalankan pada dataset extended 180 kasus simulasi (`data/extended_dataset.json`, label `development:true`, `source_type:expert_curated`) dan dataset gabungan 200 kasus. Seluruh angka dihitung dari eksekusi `python -m evaluation.run_evaluation_all`.
+
+| Indikator | Baseline (20) UCS | Extended (180) UCS | Combined (200) UCS | Combined (200) Checklist |
+| :--- | :---: | :---: | :---: | :---: |
+| Kasus label konklusif | 15 | 93 | 108 | 108 |
+| Kasus label inkonklusif | 5 | 87 | 92 | 92 |
+| Hasil aktual konklusif | 15 | 122 | 137 | 137 |
+| Hasil aktual inkonklusif | 5 | 58 | 63 | 63 |
+| Correct conclusive | 15 | 92 | 107 | 107 |
+| Incorrect conclusive (salah diagnosis) | 0 | 0 | 0 | 0 |
+| Correct inconclusive | 5 | 57 | 62 | 62 |
+| Missed conclusive (menjadi inkonklusif) | 0 | 1 | 1 | 1 |
+| False negative (turunan *missed conclusive*) | 0 | 1 | 1 | 1 |
+| False positive (kontradiksi benar-benar teramati) | 0 | 0 | 0 | 0 |
+| Observation-limited conclusive | 0 | 30 | 30 | 30 |
+| Total hasil sesuai label | 20 | 149 | 169 | 169 |
+| Coverage (hasil konklusif / total kasus) | 75.00% | 67.78% | 68.50% | 68.50% |
+| Accuracy among conclusive (label) | 100.00% | 75.41% | 78.10% | 78.10% |
+| Accuracy among evaluable conclusive | 100.00% | 100.00% | 100.00% | 100.00% |
+| Overall correct rate | 100.00% | 82.78% | 84.50% | 84.50% |
+| Overall correct rate (evaluable) | 100.00% | 99.33% | 99.41% | 99.41% |
+| Rata-rata total cost | 2.80 | 6.83 | 6.42 | 6.31 |
+| Rata-rata cost label konklusif | 2.47 | 4.45 | 4.18 | 4.18 |
+| Rata-rata cost hasil konklusif | 2.47 | 4.66 | 4.42 | 4.43 |
+| Rata-rata jumlah pemeriksaan | 1.25 | 2.82 | 2.66 | 2.54 |
+| Kasus label kontradiksi berakhir inkonklusif | 5/13 | 1/31 | 6/44 | 6/44 |
+| Kasus label kontradiksi tanpa kontradiksi teramati | 5 | 30 | 35 | 34 |
+| Bukti konsisten | 20/20 | 172/180 | 192/200 | 192/200 |
+
+Catatan penting:
+
+1. **Satu *missed conclusive* pada `EXT_DRV_045` adalah hasil yang diharapkan** dari mekanisme konfirmasi baru. Kasus misleading ini sebelumnya berhenti konklusif secara prematur hanya karena outcome `test_driver_status=false_positive`; setelah `is_category_confirmed()` mewajibkan `trusted_support`, sistem menolak menyimpulkan dan berhenti `inconclusive`. Label `expected` sengaja tidak diubah sesuai batasan tugas, sehingga kasus ini dihitung sebagai *missed conclusive* (dan *false negative* turunannya). Perilaku sistem sudah benar; label dataset yang mempertahankan ekspektasi lama.
+2. **Tidak ada *false positive* (0 kasus)** pada seluruh dataset. Sebanyak 30 kasus extended yang sebelumnya dilaporkan sebagai *false positive* kini diklasifikasikan sebagai **observation-limited conclusive**: luaran pembantah berada pada pemeriksaan yang tidak pernah dipilih UCS karena *early-stopping* goal test, sehingga sistem tidak pernah mengamati kontradiksi tersebut. Ini menegaskan bahwa mekanisme konfirmasi tidak gagal ketika konflik benar-benar masuk ke `DiagnosisState`.
+3. **Tidak ada salah diagnosis** (`incorrect_conclusive = 0`) pada seluruh dataset. Seluruh hasil konklusif yang tidak sesuai label berupa kasus *observation-limited conclusive*, bukan diagnosis kategori yang salah.
+4. **`false_negative` bukan lagi bucket utama**, melainkan metrik turunan dari *missed conclusive*. Kasus inkonklusif yang sesuai label tidak boleh dihitung sebagai false negative.
+
+### 9.6. Definisi Operasional Metrik Evaluasi
+
+Setiap kasus dipetakan ke tepat satu bucket berikut (mutually exclusive):
+
+| Bucket | Kondisi | Perlakuan Metrik |
+| :--- | :--- | :--- |
+| `correct_conclusive` | Label konklusif, hasil konklusif, diagnosis sama | Benar |
+| `incorrect_conclusive` | Label konklusif, hasil konklusif, diagnosis beda | Salah diagnosis |
+| `correct_inconclusive` | Label inkonklusif, hasil inkonklusif | Benar (bukan false negative) |
+| `missed_conclusive` | Label konklusif, hasil inkonklusif | Menjadi dasar `false_negative` |
+| `false_positive` | Label inkonklusif, hasil konklusif, bukti kontradiktif benar-benar teramati | Positif palsu sejati |
+| `observation_limited_conclusive` | Label inkonklusif, hasil konklusif, bukti kontradiktif hanya ada pada tes yang tidak pernah dieksekusi | Dikecualikan dari denominator akurasi evaluable |
+
+Metrik turunan:
+
+- `coverage = actual_conclusive_cases / cases_total`
+- `accuracy_among_conclusive_label = correct_conclusive / actual_conclusive_cases`
+- `accuracy_among_evaluable_conclusive = correct_conclusive / (correct_conclusive + incorrect_conclusive + false_positive)`
+- `overall_correct_rate = correct_total / cases_total`
+- `overall_correct_rate_evaluable = correct_total / (cases_total - observation_limited_conclusive)`
+- `false_negative_rate = missed_conclusive / expected_conclusive_cases`
+- `false_positive_rate = false_positive / expected_inconclusive_cases`
+
+`evaluation/results/summary_metrics.csv` memakai `overall_correct_rate` sebagai nilai kolom `accuracy`. Nilai tersebut sah untuk perbandingan antar-metode, tetapi tidak boleh ditafsirkan sebagai akurasi diagnosis klinis.
 
 ---
 

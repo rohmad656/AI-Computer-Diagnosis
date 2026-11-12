@@ -28,10 +28,13 @@ class DiagnosisState:
     initial_symptoms: frozenset[str]              # ID gejala awal pengguna
     performed_tests: frozenset[str]               # ID test yang sudah dilakukan
     test_results: frozenset[tuple[str, str]]      # (test_id, outcome)
-    supporting_evidence: frozenset[str]           # Bukti pendukung kategori
+    supporting_evidence: frozenset[str]           # Bukti pendukung (termasuk dari outcome misleading)
     contradicting_evidence: frozenset[str]        # Bukti yang bertentangan
     possible_categories: frozenset[str]           # Kategori yang masih mungkin
     cumulative_cost: float                        # Total biaya kumulatif
+    neutral_evidence: frozenset[tuple[str, str]] = frozenset()  # (test_id, outcome) yang tidak meyakinkan
+    trusted_support: frozenset[str] = frozenset()     # Bukti yang didukung outcome non-misleading
+    misleading_support: frozenset[str] = frozenset()  # Bukti yang hanya didukung outcome misleading
 
     def with_test_result(self, test_id: str, outcome: str) -> "DiagnosisState":
         """Membuat state baru dengan hasil test ditambahkan.
@@ -58,9 +61,26 @@ class DiagnosisState:
                 f"Valid: {test['possible_outcomes']}"
             )
 
-        mapping = test["evidence_mapping"][outcome]
+        outcome_type = get_outcome_type(test, outcome)
+
+        if outcome_type == "uncertain":
+            # Outcome tidak meyakinkan: tidak menambah dukungan maupun kontradiksi.
+            mapping = {"supports": [], "contradicts": []}
+        else:
+            mapping = test["evidence_mapping"][outcome]
+
         new_supporting = set(self.supporting_evidence) | set(mapping["supports"])
         new_contradicting = set(self.contradicting_evidence) | set(mapping["contradicts"])
+
+        # Pisahkan bukti yang boleh dipakai untuk konfirmasi final.
+        # Outcome misleading hanya menghasilkan "indikasi awal" sehingga tidak
+        # boleh menjadi satu-satunya dasar diagnosis konklusif.
+        new_trusted = set(self.trusted_support)
+        new_misleading = set(self.misleading_support)
+        if outcome_type == "misleading":
+            new_misleading |= set(mapping["supports"])
+        elif outcome_type != "uncertain":
+            new_trusted |= set(mapping["supports"])
 
         # Kategori tetap mungkin selama belum ada bukti yang bertentangan.
         # Jika seluruh kategori tereliminasi, hasil akhirnya harus tidak konklusif;
@@ -74,6 +94,10 @@ class DiagnosisState:
             )
         }
 
+        new_neutral = set(self.neutral_evidence)
+        if outcome_type == "uncertain":
+            new_neutral.add((test_id, outcome))
+
         return DiagnosisState(
             initial_symptoms=self.initial_symptoms,
             performed_tests=self.performed_tests | {test_id},
@@ -82,6 +106,9 @@ class DiagnosisState:
             contradicting_evidence=frozenset(new_contradicting),
             possible_categories=frozenset(new_possible),
             cumulative_cost=self.cumulative_cost + test["cost"],
+            neutral_evidence=frozenset(new_neutral),
+            trusted_support=frozenset(new_trusted),
+            misleading_support=frozenset(new_misleading),
         )
 
     def get_test_result(self, test_id: str) -> str | None:
@@ -90,6 +117,15 @@ class DiagnosisState:
             if tid == test_id:
                 return outcome
         return None
+
+
+def get_outcome_type(test: dict[str, Any], outcome: str) -> str:
+    """Mengembalikan tipe outcome: normal, abnormal, uncertain, atau misleading.
+
+    Default ke ``abnormal`` untuk kompatibilitas data lama yang belum
+    memiliki metadata ``outcome_types``.
+    """
+    return test.get("outcome_types", {}).get(outcome, "abnormal")
 
 
 def get_category_evidence_keys(category_id: str) -> list[str]:
@@ -108,13 +144,15 @@ def get_category_evidence_keys(category_id: str) -> list[str]:
 
 
 def is_category_confirmed(state: DiagnosisState, category_id: str) -> bool:
-    """Memeriksa apakah kategori memiliki bukti pendukung yang cukup.
+    """Memeriksa apakah kategori memiliki bukti konfirmasi yang cukup.
 
-    Kategori tidak dianggap terkonfirmasi jika bukti yang sama juga
-    tercatat sebagai bukti bertentangan.
+    Hanya ``trusted_support`` (outcome non-misleading) yang boleh dipakai.
+    Bukti dari outcome misleading adalah indikasi awal, bukan konfirmasi.
+    Kategori juga tidak dianggap terkonfirmasi jika bukti yang sama tercatat
+    sebagai bukti bertentangan.
     """
     required = get_category_evidence_keys(category_id)
-    return all(ev in state.supporting_evidence for ev in required) and not any(
+    return all(ev in state.trusted_support for ev in required) and not any(
         ev in state.contradicting_evidence for ev in required
     )
 
@@ -125,8 +163,45 @@ def is_category_ruled_out(state: DiagnosisState, category_id: str) -> bool:
     return any(ev in state.contradicting_evidence for ev in keys)
 
 
+ALL_CATEGORY_IDS: tuple[str, ...] = (
+    "driver_software",
+    "overheating",
+    "storage_disk",
+    "ram_memory",
+)
+
+
+def is_category_conflicting(state: DiagnosisState, category_id: str) -> bool:
+    """True jika evidence kategori yang sama mendukung sekaligus menolak.
+
+    Kondisi ini menandakan data pemeriksaan saling bertentangan (misalnya
+    outcome misleading), sehingga kategori tidak boleh langsung dianggap
+    terkonfirmasi.
+    """
+    keys = get_category_evidence_keys(category_id)
+    return any(
+        ev in state.supporting_evidence and ev in state.contradicting_evidence
+        for ev in keys
+    )
+
+
+def get_conflicting_categories(state: DiagnosisState) -> list[str]:
+    """Mengembalikan daftar kategori dengan evidence internal yang bertentangan."""
+    return [
+        category_id
+        for category_id in ALL_CATEGORY_IDS
+        if is_category_conflicting(state, category_id)
+    ]
+
+
 def is_goal_state(state: DiagnosisState) -> bool:
-    """Goal test: apakah ada kategori yang terkonfirmasi."""
+    """Goal test: ada kategori terkonfirmasi (trusted evidence) tanpa konflik evidence.
+
+    Hanya trusted_support (outcome non-misleading) yang memenuhi syarat konfirmasi.
+    Misleading evidence adalah indikasi awal, bukan dasar diagnosis konklusif.
+    """
+    if get_conflicting_categories(state):
+        return False
     return any(is_category_confirmed(state, cat) for cat in state.possible_categories)
 
 
@@ -286,6 +361,9 @@ def get_evidence_sufficiency(state: DiagnosisState) -> str:
         - ``"insufficient"``: tidak ada pemeriksaan relevan yang tersisa.
         - ``"partial"``: bukti belum cukup, tetapi pemeriksaan masih tersedia.
     """
+    if get_conflicting_categories(state):
+        return "conflicting"
+
     confirmed = [
         category_id
         for category_id in state.possible_categories
@@ -314,6 +392,7 @@ def evaluate_diagnosis(state: DiagnosisState) -> dict[str, Any]:
         - recommendations: list (jika conclusive)
         - cumulative_cost: float
     """
+    conflicts = get_conflicting_categories(state)
     confirmed_categories = [
         cat for cat in state.possible_categories
         if is_category_confirmed(state, cat)
@@ -321,7 +400,7 @@ def evaluate_diagnosis(state: DiagnosisState) -> dict[str, Any]:
     pending_tests = get_pending_tests(state)
     sufficiency = get_evidence_sufficiency(state)
 
-    if len(confirmed_categories) == 1:
+    if not conflicts and len(confirmed_categories) == 1:
         cat_id = confirmed_categories[0]
         category = get_category_by_id(cat_id)
         return {
@@ -330,6 +409,10 @@ def evaluate_diagnosis(state: DiagnosisState) -> dict[str, Any]:
             "category_name": category["name"] if category else cat_id,
             "supporting_evidence": list(state.supporting_evidence),
             "contradicting_evidence": list(state.contradicting_evidence),
+            "neutral_evidence": list(state.neutral_evidence),
+            "trusted_support": list(state.trusted_support),
+            "misleading_support": list(state.misleading_support),
+            "conflicting_categories": conflicts,
             "possible_categories": list(state.possible_categories),
             "pending_tests": pending_tests,
             "evidence_sufficiency": sufficiency,
@@ -337,18 +420,22 @@ def evaluate_diagnosis(state: DiagnosisState) -> dict[str, Any]:
             "cumulative_cost": state.cumulative_cost,
         }
 
-    # Cek apakah masih ada test yang bisa dilakukan
-    if not pending_tests:
+    # Konflik evidence atau tidak ada pemeriksaan relevan tersisa: inconclusive.
+    if conflicts or not pending_tests:
         return {
             "status": "inconclusive",
             "diagnosed_category": None,
             "supporting_evidence": list(state.supporting_evidence),
             "contradicting_evidence": list(state.contradicting_evidence),
+            "neutral_evidence": list(state.neutral_evidence),
+            "trusted_support": list(state.trusted_support),
+            "misleading_support": list(state.misleading_support),
+            "conflicting_categories": conflicts,
             "possible_categories": list(state.possible_categories),
-            "pending_tests": [],
+            "pending_tests": pending_tests,
             "evidence_sufficiency": sufficiency,
             "recommendations": [
-                "Semua pemeriksaan relevan telah dilakukan namun bukti tidak cukup untuk diagnosis pasti.",
+                "Bukti pemeriksaan saling bertentangan atau tidak cukup untuk diagnosis pasti.",
                 "Konsultasikan dengan teknisi profesional untuk analisis lebih lanjut."
             ],
             "cumulative_cost": state.cumulative_cost,
@@ -359,6 +446,10 @@ def evaluate_diagnosis(state: DiagnosisState) -> dict[str, Any]:
         "diagnosed_category": None,
         "supporting_evidence": list(state.supporting_evidence),
         "contradicting_evidence": list(state.contradicting_evidence),
+        "neutral_evidence": list(state.neutral_evidence),
+        "trusted_support": list(state.trusted_support),
+        "misleading_support": list(state.misleading_support),
+        "conflicting_categories": conflicts,
         "possible_categories": list(state.possible_categories),
         "pending_tests": pending_tests,
         "evidence_sufficiency": sufficiency,

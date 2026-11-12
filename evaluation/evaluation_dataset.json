@@ -7,11 +7,16 @@
       "category": "overheating",
       "name": "Overheating Akut - CPU Critical",
       "description": "Komputer mati mendadak saat rendering, kipas berputar kencang.",
-      "initial_symptoms": ["sym_shutdown_thermal", "sym_fan_loud_hot"],
+      "initial_symptoms": [
+        "sym_shutdown_thermal",
+        "sym_fan_loud_hot"
+      ],
       "simulated_results": {
         "test_cpu_gpu_temp": "critical"
       },
-      "expected_supporting_evidence": ["high_temperature_confirmed"],
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
       "expected_contradicting_evidence": [],
       "expected_diagnosis": "overheating",
       "expected_status": "conclusive"
@@ -21,11 +26,15 @@
       "category": "overheating",
       "name": "Overheating - Suhu Elevated",
       "description": "Komputer terasa panas dan kipas sering berputar kencang.",
-      "initial_symptoms": ["sym_fan_loud_hot"],
+      "initial_symptoms": [
+        "sym_fan_loud_hot"
+      ],
       "simulated_results": {
         "test_cpu_gpu_temp": "elevated"
       },
-      "expected_supporting_evidence": ["high_temperature_confirmed"],
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
       "expected_contradicting_evidence": [],
       "expected_diagnosis": "overheating",
       "expected_status": "conclusive"
@@ -35,12 +44,16 @@
       "category": "overheating",
       "name": "Overheating - Tidak Konklusif (Suhu Normal)",
       "description": "Kipas bising tetapi suhu CPU/GPU normal.",
-      "initial_symptoms": ["sym_fan_loud_hot"],
+      "initial_symptoms": [
+        "sym_fan_loud_hot"
+      ],
       "simulated_results": {
         "test_cpu_gpu_temp": "normal"
       },
       "expected_supporting_evidence": [],
-      "expected_contradicting_evidence": ["high_temperature_confirmed"],
+      "expected_contradicting_evidence": [
+        "high_temperature_confirmed"
+      ],
       "expected_diagnosis": null,
       "expected_status": "inconclusive"
     },
@@ -49,14 +62,21 @@
       "category": "overheating",
       "name": "Overheating dengan Gejala Driver",
       "description": "Mati mendadak dan BSOD; suhu kritis, tetapi status driver normal.",
-      "initial_symptoms": ["sym_shutdown_thermal", "sym_bsod_driver"],
+      "initial_symptoms": [
+        "sym_shutdown_thermal",
+        "sym_bsod_driver"
+      ],
       "simulated_results": {
         "test_cpu_gpu_temp": "critical",
         "test_driver_status": "all_ok",
         "test_error_code_history": "no_driver_errors"
       },
-      "expected_supporting_evidence": ["high_temperature_confirmed"],
-      "expected_contradicting_evidence": ["driver_issue_confirmed"],
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
       "expected_diagnosis": "overheating",
       "expected_status": "conclusive"
     },
@@ -65,12 +85,17 @@
       "category": "driver_software",
       "name": "Driver Masalah - Yellow Bang",
       "description": "BSOD SYSTEM_SERVICE_EXCEPTION dan Device Manager menunjukkan tanda seru.",
-      "initial_symptoms": ["sym_bsod_driver", "sym_device_manager_yellow"],
+      "initial_symptoms": [
+        "sym_bsod_driver",
+        "sym_device_manager_yellow"
+      ],
       "simulated_results": {
         "test_driver_status": "yellow_bang",
         "test_error_code_history": "driver_errors_found"
       },
-      "expected_supporting_evidence": ["driver_issue_confirmed"],
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
       "expected_contradicting_evidence": [],
       "expected_diagnosis": "driver_software",
       "expected_status": "conclusive"
@@ -80,12 +105,16 @@
       "category": "driver_software",
       "name": "Driver Masalah - Kode Error",
       "description": "BSOD berulang; Device Manager dan minidump sama-sama menunjukkan masalah driver.",
-      "initial_symptoms": ["sym_bsod_driver"],
+      "initial_symptoms": [
+        "sym_bsod_driver"
+      ],
       "simulated_results": {
         "test_driver_status": "error_code",
         "test_error_code_history": "driver_errors_found"
       },
-      "expected_supporting_evidence": ["driver_issue_confirmed"],
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
       "expected_contradicting_evidence": [],
       "expected_diagnosis": "driver_software",
       "expected_status": "conclusive"
@@ -95,13 +124,17 @@
       "category": "driver_software",
       "name": "Driver - Tidak Konklusif (Semua Normal)",
       "description": "BSOD terjadi tetapi status driver normal dan tidak ada error code.",
-      "initial_symptoms": ["sym_bsod_driver"],
+      "initial_symptoms": [
+        "sym_bsod_driver"
+      ],
       "simulated_results": {
         "test_driver_status": "all_ok",
         "test_error_code_history": "no_driver_errors"
       },
       "expected_supporting_evidence": [],
-      "expected_contradicting_evidence": ["driver_issue_confirmed"],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
       "expected_diagnosis": null,
       "expected_status": "inconclusive"
     },
@@ -110,15 +143,22 @@
       "category": "driver_software",
       "name": "Driver dengan Gejala Storage",
       "description": "BSOD driver dan akses file lambat; driver bermasalah, disk sehat.",
-      "initial_symptoms": ["sym_bsod_driver", "sym_disk_slow_freeze"],
+      "initial_symptoms": [
+        "sym_bsod_driver",
+        "sym_disk_slow_freeze"
+      ],
       "simulated_results": {
         "test_driver_status": "yellow_bang",
         "test_error_code_history": "driver_errors_found",
         "test_smart_disk": "healthy",
         "test_disk_system_error_logs": "no_errors"
       },
-      "expected_supporting_evidence": ["driver_issue_confirmed"],
-      "expected_contradicting_evidence": ["disk_issue_confirmed"],
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "disk_issue_confirmed"
+      ],
       "expected_diagnosis": "driver_software",
       "expected_status": "conclusive"
     },
@@ -127,12 +167,16 @@
       "category": "storage_disk",
       "name": "Storage - SMART Warning",
       "description": "Akses file lambat dan Windows sering freeze.",
-      "initial_symptoms": ["sym_disk_slow_freeze"],
+      "initial_symptoms": [
+        "sym_disk_slow_freeze"
+      ],
       "simulated_results": {
         "test_smart_disk": "warning",
         "test_disk_system_error_logs": "disk_errors_present"
       },
-      "expected_supporting_evidence": ["disk_issue_confirmed"],
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
       "expected_contradicting_evidence": [],
       "expected_diagnosis": "storage_disk",
       "expected_status": "conclusive"
@@ -142,12 +186,16 @@
       "category": "storage_disk",
       "name": "Storage - SMART Bad",
       "description": "Windows otomatis menjalankan scan and repair drive saat boot.",
-      "initial_symptoms": ["sym_chkdsk_auto"],
+      "initial_symptoms": [
+        "sym_chkdsk_auto"
+      ],
       "simulated_results": {
         "test_smart_disk": "bad",
         "test_disk_system_error_logs": "disk_errors_present"
       },
-      "expected_supporting_evidence": ["disk_issue_confirmed"],
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
       "expected_contradicting_evidence": [],
       "expected_diagnosis": "storage_disk",
       "expected_status": "conclusive"
@@ -157,13 +205,18 @@
       "category": "storage_disk",
       "name": "Storage - Tidak Konklusif",
       "description": "Gejala storage tetapi SMART sehat dan tidak ada error log.",
-      "initial_symptoms": ["sym_disk_slow_freeze", "sym_chkdsk_auto"],
+      "initial_symptoms": [
+        "sym_disk_slow_freeze",
+        "sym_chkdsk_auto"
+      ],
       "simulated_results": {
         "test_smart_disk": "healthy",
         "test_disk_system_error_logs": "no_errors"
       },
       "expected_supporting_evidence": [],
-      "expected_contradicting_evidence": ["disk_issue_confirmed"],
+      "expected_contradicting_evidence": [
+        "disk_issue_confirmed"
+      ],
       "expected_diagnosis": null,
       "expected_status": "inconclusive"
     },
@@ -172,14 +225,22 @@
       "category": "storage_disk",
       "name": "Storage dengan Gejala RAM",
       "description": "Akses disk lambat dan aplikasi crash acak; SMART warning, memori normal.",
-      "initial_symptoms": ["sym_disk_slow_freeze", "sym_app_crash_random"],
+      "initial_symptoms": [
+        "sym_disk_slow_freeze",
+        "sym_app_crash_random"
+      ],
       "simulated_results": {
         "test_smart_disk": "warning",
         "test_disk_system_error_logs": "disk_errors_present",
-        "test_memory_diagnostic": "no_errors"
+        "test_memory_diagnostic": "no_errors",
+        "test_ram_usage_snapshot": "normal"
       },
-      "expected_supporting_evidence": ["disk_issue_confirmed"],
-      "expected_contradicting_evidence": ["memory_issue_confirmed"],
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
       "expected_diagnosis": "storage_disk",
       "expected_status": "conclusive"
     },
@@ -188,11 +249,17 @@
       "category": "ram_memory",
       "name": "RAM - Memory Diagnostic Error",
       "description": "BSOD MEMORY_MANAGEMENT dan aplikasi crash acak.",
-      "initial_symptoms": ["sym_bsod_memory_management", "sym_app_crash_random"],
+      "initial_symptoms": [
+        "sym_bsod_memory_management",
+        "sym_app_crash_random"
+      ],
       "simulated_results": {
-        "test_memory_diagnostic": "errors_found"
+        "test_memory_diagnostic": "errors_found",
+        "test_ram_usage_snapshot": "high_usage"
       },
-      "expected_supporting_evidence": ["memory_issue_confirmed"],
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
       "expected_contradicting_evidence": [],
       "expected_diagnosis": "ram_memory",
       "expected_status": "conclusive"
@@ -202,12 +269,17 @@
       "category": "ram_memory",
       "name": "RAM - Tidak Konklusif",
       "description": "Aplikasi crash acak tetapi memory diagnostic tidak menemukan error.",
-      "initial_symptoms": ["sym_app_crash_random"],
+      "initial_symptoms": [
+        "sym_app_crash_random"
+      ],
       "simulated_results": {
-        "test_memory_diagnostic": "no_errors"
+        "test_memory_diagnostic": "no_errors",
+        "test_ram_usage_snapshot": "normal"
       },
       "expected_supporting_evidence": [],
-      "expected_contradicting_evidence": ["memory_issue_confirmed"],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
       "expected_diagnosis": null,
       "expected_status": "inconclusive"
     },
@@ -216,14 +288,22 @@
       "category": "ram_memory",
       "name": "RAM dengan Gejala Driver",
       "description": "Crash acak dan BSOD driver; memory error ditemukan, driver normal.",
-      "initial_symptoms": ["sym_app_crash_random", "sym_bsod_driver"],
+      "initial_symptoms": [
+        "sym_app_crash_random",
+        "sym_bsod_driver"
+      ],
       "simulated_results": {
         "test_memory_diagnostic": "errors_found",
         "test_driver_status": "all_ok",
-        "test_error_code_history": "no_driver_errors"
+        "test_error_code_history": "no_driver_errors",
+        "test_ram_usage_snapshot": "normal"
       },
-      "expected_supporting_evidence": ["memory_issue_confirmed"],
-      "expected_contradicting_evidence": ["driver_issue_confirmed"],
+      "expected_supporting_evidence": [
+        "memory_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
       "expected_diagnosis": "ram_memory",
       "expected_status": "conclusive"
     },
@@ -232,14 +312,21 @@
       "category": "driver_software",
       "name": "Driver dengan Gejala Overheating",
       "description": "BSOD driver dan kipas bising; suhu normal, driver bermasalah.",
-      "initial_symptoms": ["sym_bsod_driver", "sym_shutdown_thermal"],
+      "initial_symptoms": [
+        "sym_bsod_driver",
+        "sym_shutdown_thermal"
+      ],
       "simulated_results": {
         "test_driver_status": "yellow_bang",
         "test_error_code_history": "driver_errors_found",
         "test_cpu_gpu_temp": "normal"
       },
-      "expected_supporting_evidence": ["driver_issue_confirmed"],
-      "expected_contradicting_evidence": ["high_temperature_confirmed"],
+      "expected_supporting_evidence": [
+        "driver_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "high_temperature_confirmed"
+      ],
       "expected_diagnosis": "driver_software",
       "expected_status": "conclusive"
     },
@@ -248,15 +335,22 @@
       "category": "storage_disk",
       "name": "Storage dengan Gejala Driver",
       "description": "Akses disk lambat dan BSOD; SMART warning, status driver normal.",
-      "initial_symptoms": ["sym_disk_slow_freeze", "sym_bsod_driver"],
+      "initial_symptoms": [
+        "sym_disk_slow_freeze",
+        "sym_bsod_driver"
+      ],
       "simulated_results": {
         "test_smart_disk": "warning",
         "test_disk_system_error_logs": "disk_errors_present",
         "test_driver_status": "all_ok",
         "test_error_code_history": "no_driver_errors"
       },
-      "expected_supporting_evidence": ["disk_issue_confirmed"],
-      "expected_contradicting_evidence": ["driver_issue_confirmed"],
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed"
+      ],
       "expected_diagnosis": "storage_disk",
       "expected_status": "conclusive"
     },
@@ -265,13 +359,21 @@
       "category": "overheating",
       "name": "Overheating dengan Gejala RAM",
       "description": "Mati mendadak dan aplikasi crash; suhu elevated, memori normal.",
-      "initial_symptoms": ["sym_shutdown_thermal", "sym_app_crash_random"],
+      "initial_symptoms": [
+        "sym_shutdown_thermal",
+        "sym_app_crash_random"
+      ],
       "simulated_results": {
         "test_cpu_gpu_temp": "elevated",
-        "test_memory_diagnostic": "no_errors"
+        "test_memory_diagnostic": "no_errors",
+        "test_ram_usage_snapshot": "normal"
       },
-      "expected_supporting_evidence": ["high_temperature_confirmed"],
-      "expected_contradicting_evidence": ["memory_issue_confirmed"],
+      "expected_supporting_evidence": [
+        "high_temperature_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "memory_issue_confirmed"
+      ],
       "expected_diagnosis": "overheating",
       "expected_status": "conclusive"
     },
@@ -280,16 +382,26 @@
       "category": "storage_disk",
       "name": "Storage dengan Gejala Driver dan RAM",
       "description": "Gejala gabungan tiga kategori; SMART bad, driver dan memori normal.",
-      "initial_symptoms": ["sym_disk_slow_freeze", "sym_bsod_driver", "sym_app_crash_random"],
+      "initial_symptoms": [
+        "sym_disk_slow_freeze",
+        "sym_bsod_driver",
+        "sym_app_crash_random"
+      ],
       "simulated_results": {
         "test_smart_disk": "bad",
         "test_disk_system_error_logs": "disk_errors_present",
         "test_driver_status": "all_ok",
         "test_error_code_history": "no_driver_errors",
-        "test_memory_diagnostic": "no_errors"
+        "test_memory_diagnostic": "no_errors",
+        "test_ram_usage_snapshot": "normal"
       },
-      "expected_supporting_evidence": ["disk_issue_confirmed"],
-      "expected_contradicting_evidence": ["driver_issue_confirmed", "memory_issue_confirmed"],
+      "expected_supporting_evidence": [
+        "disk_issue_confirmed"
+      ],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed",
+        "memory_issue_confirmed"
+      ],
       "expected_diagnosis": "storage_disk",
       "expected_status": "conclusive"
     },
@@ -298,16 +410,25 @@
       "category": "mixed",
       "name": "Tidak Konklusif Multi-Kategori",
       "description": "Gejala driver, storage, dan RAM; seluruh pemeriksaan menunjukkan hasil normal.",
-      "initial_symptoms": ["sym_bsod_driver", "sym_disk_slow_freeze", "sym_app_crash_random"],
+      "initial_symptoms": [
+        "sym_bsod_driver",
+        "sym_disk_slow_freeze",
+        "sym_app_crash_random"
+      ],
       "simulated_results": {
         "test_driver_status": "all_ok",
         "test_error_code_history": "no_driver_errors",
         "test_smart_disk": "healthy",
         "test_disk_system_error_logs": "no_errors",
-        "test_memory_diagnostic": "no_errors"
+        "test_memory_diagnostic": "no_errors",
+        "test_ram_usage_snapshot": "normal"
       },
       "expected_supporting_evidence": [],
-      "expected_contradicting_evidence": ["driver_issue_confirmed", "disk_issue_confirmed", "memory_issue_confirmed"],
+      "expected_contradicting_evidence": [
+        "driver_issue_confirmed",
+        "disk_issue_confirmed",
+        "memory_issue_confirmed"
+      ],
       "expected_diagnosis": null,
       "expected_status": "inconclusive"
     }

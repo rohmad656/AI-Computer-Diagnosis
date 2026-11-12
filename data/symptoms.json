@@ -54,6 +54,36 @@
       "related_categories": ["driver_software"]
     },
     {
+      "id": "sym_bsod_generic",
+      "name": "Layar biru (BSOD) umum",
+      "description": "BSOD tanpa kode spesifik yang mengindikasikan driver, RAM, atau storage.",
+      "related_categories": ["driver_software", "ram_memory", "storage_disk"]
+    },
+    {
+      "id": "sym_memory_management",
+      "name": "BSOD MEMORY_MANAGEMENT",
+      "description": "BSOD dengan kode MEMORY_MANAGEMENT, dapat disebabkan driver atau RAM.",
+      "related_categories": ["ram_memory", "driver_software"]
+    },
+    {
+      "id": "sym_disk_error",
+      "name": "Error disk pada Event Viewer",
+      "description": "Log error disk (Event ID 7, 9, 11) yang dapat disebabkan storage atau driver.",
+      "related_categories": ["storage_disk", "driver_software"]
+    },
+    {
+      "id": "sym_system_crash",
+      "name": "Kegagalan sistem tanpa BSOD (restart tiba-tiba)",
+      "description": "Sistem restart secara tiba-tiba, dapat disebabkan driver, overheating, atau hardware.",
+      "related_categories": ["driver_software", "overheating", "storage_disk"]
+    },
+    {
+      "id": "sym_performance_degradation",
+      "name": "Penurunan performa (lag)",
+      "description": "Komputer menjadi lambat secara umum, dapat disebabkan RAM, storage, atau overheating.",
+      "related_categories": ["ram_memory", "storage_disk", "overheating"]
+    },
+    {
       "id": "sym_device_manager_yellow",
       "name": "Tanda seru kuning di Device Manager",
       "description": "Perangkat keras terdeteksi bermasalah atau driver tidak terpasang dengan benar.",

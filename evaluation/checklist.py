@@ -128,15 +128,19 @@ def run_checklist_for_case(
             break
         # Jika in_progress, lanjut ke test berikutnya
 
-    # Evaluasi akhir
+    # Evaluasi akhir. Checklist bersifat fixed-order: jika seluruh urutan
+    # selesai tanpa konfirmasi, hasilnya inkonklusif, bukan in_progress.
     final_eval = evaluate_diagnosis(state)
+    final_status = final_eval["status"]
+    if final_status == "in_progress":
+        final_status = "inconclusive"
     result = ChecklistResult(
         case_id=case["case_id"],
         performed_tests=performed,
         total_cost=total_cost,
         test_count=len(performed),
         diagnosis=final_eval.get("diagnosed_category"),
-        status=final_eval["status"],
+        status=final_status,
         evidence_sufficiency=final_eval.get("evidence_sufficiency", "partial"),
         final_state=state,
     )

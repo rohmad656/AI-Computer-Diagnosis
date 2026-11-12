@@ -1,0 +1,32 @@
+metric,label,ucs,checklist
+cases_total,Total kasus,180,180
+expected_conclusive_cases,Kasus label konklusif,93,93
+expected_inconclusive_cases,Kasus label inkonklusif,87,87
+actual_conclusive_cases,Hasil aktual konklusif,122,122
+actual_inconclusive_cases,Hasil aktual inkonklusif,58,58
+correct_conclusive,Correct conclusive,92,92
+incorrect_conclusive,Incorrect conclusive,0,0
+correct_inconclusive,Correct inconclusive,57,57
+missed_conclusive,Missed conclusive (inconclusive),1,1
+false_negative,False negative (diturunkan),1,1
+false_positive,False positive (bukti teramati),0,0
+observation_limited_conclusive,Observation-limited conclusive,30,30
+correct_total,Total hasil sesuai label,149,149
+coverage,Coverage / diagnosis completion rate,0.6777777777777778,0.6777777777777778
+accuracy_among_conclusive_label,Accuracy among conclusive (label),0.7540983606557377,0.7540983606557377
+accuracy_among_evaluable_conclusive,Accuracy among evaluable conclusive,1.0,1.0
+overall_correct_rate,Overall correct rate,0.8277777777777777,0.8277777777777777
+overall_correct_rate_evaluable,Overall correct rate (evaluable),0.9933333333333333,0.9933333333333333
+accuracy,Akurasi terhadap label (alias overall_correct_rate),0.8277777777777777,0.8277777777777777
+false_negative_rate,False negative rate,0.010752688172043012,0.010752688172043012
+false_positive_rate,False positive rate,0.0,0.0
+average_cost,Rata-rata total cost,6.8277777777777775,6.688888888888889
+average_expected_conclusive_cost,Rata-rata cost label konklusif,4.451612903225806,4.43010752688172
+average_actual_conclusive_cost,Rata-rata cost hasil konklusif,4.655737704918033,4.655737704918033
+average_test_count,Rata-rata jumlah pemeriksaan,2.816666666666667,2.6777777777777776
+observed_conflict_cases,Kasus dengan kontradiksi teramati,1,1
+observed_conflict_cases_inconclusive,Kontradiksi teramati yang berakhir inkonklusif,1,1
+expected_conflict_cases,Kasus label dengan kontradiksi,31,31
+expected_conflict_cases_inconclusive,Kasus label kontradiksi yang berakhir inkonklusif,1,1
+expected_conflict_cases_unobserved,Kasus label kontradiksi tanpa kontradiksi teramati,30,30
+evidence_consistent_cases,Kasus dengan bukti konsisten,172,172

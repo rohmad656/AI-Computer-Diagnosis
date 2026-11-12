@@ -2783,6 +2783,9 @@ def get_next_recommended_test_filtered(
         contradicting_evidence=state.contradicting_evidence,
         possible_categories=state.possible_categories,
         cumulative_cost=state.cumulative_cost,
+        neutral_evidence=state.neutral_evidence,
+        trusted_support=state.trusted_support,
+        misleading_support=state.misleading_support,
     )
     return get_next_recommended_test(shadow_state)
 

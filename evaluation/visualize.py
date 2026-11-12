@@ -99,11 +99,12 @@ def plot_outcomes(report: dict[str, Any], output: Path) -> None:
     ucs = report["summary"]["ucs"]["outcomes"]
     checklist = report["summary"]["checklist"]["outcomes"]
     categories = [
-        ("correct", "Benar"),
+        ("correct_conclusive", "Konklusif\nbenar"),
         ("correct_inconclusive", "Inkonklusif\nsesuai label"),
-        ("wrong_diagnosis", "Salah\ndiagnosis"),
-        ("false_negative", "False\nnegative"),
+        ("incorrect_conclusive", "Salah\ndiagnosis"),
+        ("missed_conclusive", "Konklusif\nterlewat"),
         ("false_positive", "False\npositive"),
+        ("observation_limited_conclusive", "Konklusif\nterbatas observasi"),
     ]
 
     labels = [label for _, label in categories]

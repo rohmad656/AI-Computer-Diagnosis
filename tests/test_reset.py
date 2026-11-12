@@ -86,8 +86,9 @@ def test_clear_diagnosis_state_logic():
 
 def test_reset_after_conclusive_diagnosis():
     """Skenario 1: reset setelah diagnosis konklusif."""
-    state = initialize_diagnosis(["sym_bsod_driver"])
-    state = apply_test_result(state, "test_driver_status", "error_code")
+    # Overheating konklusif dengan satu tes
+    state = initialize_diagnosis(["sym_shutdown_thermal"])
+    state = apply_test_result(state, "test_cpu_gpu_temp", "elevated")
     evaluation = evaluate_diagnosis(state)
     assert evaluation["status"] == "conclusive"
 

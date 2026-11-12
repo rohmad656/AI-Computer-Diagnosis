@@ -1,16 +1,32 @@
 metric,label,ucs,checklist
-cases_total,Jumlah kasus,20,20
-correct_conclusive,Diagnosis konklusif benar,15,15
-correct_inconclusive,Inkonklusif sesuai label,5,5
-correct_total,Total hasil sesuai label,20,20
-accuracy,Akurasi terhadap label,1.0,1.0
-wrong_diagnosis,Diagnosis salah,0,0
-false_negative,False negative,0,0
-false_positive,False positive,0,0
-actual_inconclusive,Hasil inkonklusif,5,5
-average_cost,Rata-rata total cost,2.8,2.9
-average_conclusive_cost,Rata-rata cost kasus konklusif,2.466666666666667,2.6
-average_test_count,Rata-rata jumlah pemeriksaan,1.25,1.3
-conflict_cases,Kasus dengan bukti bertentangan,13,13
-conflict_cases_correct,Kasus bertentangan yang benar,13,13
-evidence_consistent_cases,Kasus dengan bukti konsisten,20,20
+cases_total,Total kasus,200,200
+expected_conclusive_cases,Kasus label konklusif,108,108
+expected_inconclusive_cases,Kasus label inkonklusif,92,92
+actual_conclusive_cases,Hasil aktual konklusif,137,137
+actual_inconclusive_cases,Hasil aktual inkonklusif,63,63
+correct_conclusive,Correct conclusive,107,107
+incorrect_conclusive,Incorrect conclusive,0,0
+correct_inconclusive,Correct inconclusive,62,62
+missed_conclusive,Missed conclusive (inconclusive),1,1
+false_negative,False negative (diturunkan),1,1
+false_positive,False positive (bukti teramati),0,0
+observation_limited_conclusive,Observation-limited conclusive,30,30
+correct_total,Total hasil sesuai label,169,169
+coverage,Coverage / diagnosis completion rate,0.685,0.685
+accuracy_among_conclusive_label,Accuracy among conclusive (label),0.781021897810219,0.781021897810219
+accuracy_among_evaluable_conclusive,Accuracy among evaluable conclusive,1.0,1.0
+overall_correct_rate,Overall correct rate,0.845,0.845
+overall_correct_rate_evaluable,Overall correct rate (evaluable),0.9941176470588236,0.9941176470588236
+accuracy,Akurasi terhadap label (alias overall_correct_rate),0.845,0.845
+false_negative_rate,False negative rate,0.009259259259259259,0.009259259259259259
+false_positive_rate,False positive rate,0.0,0.0
+average_cost,Rata-rata total cost,6.425,6.31
+average_expected_conclusive_cost,Rata-rata cost label konklusif,4.175925925925926,4.175925925925926
+average_actual_conclusive_cost,Rata-rata cost hasil konklusif,4.416058394160584,4.430656934306569
+average_test_count,Rata-rata jumlah pemeriksaan,2.66,2.54
+observed_conflict_cases,Kasus dengan kontradiksi teramati,9,10
+observed_conflict_cases_inconclusive,Kontradiksi teramati yang berakhir inkonklusif,6,6
+expected_conflict_cases,Kasus label dengan kontradiksi,44,44
+expected_conflict_cases_inconclusive,Kasus label kontradiksi yang berakhir inkonklusif,6,6
+expected_conflict_cases_unobserved,Kasus label kontradiksi tanpa kontradiksi teramati,35,34
+evidence_consistent_cases,Kasus dengan bukti konsisten,192,192

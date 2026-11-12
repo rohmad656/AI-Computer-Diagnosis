@@ -112,6 +112,24 @@ def _validate_diagnostic_tests_structure(data: dict[str, Any]) -> None:
         if not isinstance(test["evidence_mapping"], dict):
             raise KnowledgeBaseValidationError(f"tests[{idx}]: 'evidence_mapping' harus dictionary")
 
+        # Validasi optional outcome_types
+        allowed_outcome_types = {"normal", "abnormal", "uncertain", "misleading"}
+        outcome_types = test.get("outcome_types")
+        if outcome_types is not None:
+            if not isinstance(outcome_types, dict):
+                raise KnowledgeBaseValidationError(f"tests[{idx}]: 'outcome_types' harus dictionary")
+            for outcome, otype in outcome_types.items():
+                if outcome not in test["possible_outcomes"]:
+                    raise KnowledgeBaseValidationError(
+                        f"tests[{idx}]: outcome_types merujuk outcome tidak dikenal '{outcome}'"
+                    )
+                if otype not in allowed_outcome_types:
+                    raise KnowledgeBaseValidationError(
+                        f"tests[{idx}]: outcome_types['{outcome}'] tipe '{otype}' tidak valid. Harus salah satu dari {sorted(allowed_outcome_types)}"
+                    )
+            # Pastikan setiap possible_outcome memiliki outcome_type (opsional, tidak memaksa)
+            # Hanya peringatan, tidak error
+
         for outcome in test["possible_outcomes"]:
             if outcome not in test["evidence_mapping"]:
                 raise KnowledgeBaseValidationError(
