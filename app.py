@@ -53,8 +53,14 @@ OUTCOME_LABELS = {
     "no_driver_errors": "Tidak Ada Error Driver (Minidump Bersih)",
     "driver_errors_found": "Error Driver Terdeteksi (Crash Dump)",
     "errors_found": "Error Ditemukan (Modul RAM Korup)",
-    "skip": "Lewati pemeriksaan ini (Skip)",
+    "high_usage": "Penggunaan Tinggi (Beban Ekstrem)",
+    "inconclusive": "Hasil Tidak Dapat Disimpulkan",
+    "skip": "Lewati Pemeriksaan Ini (Skip test)",
 }
+
+# Opsi evaluasi internal yang dikecualikan dari pilihan observasi pengguna di UI.
+# Nilai-nilai ini tetap sah di level Knowledge Base dan evaluasi benchmark eksperimental.
+EXCLUDED_UI_OUTCOMES: set[str] = {"false_positive", "false_negative"}
 
 EVIDENCE_LABELS = {
     "driver_issue_confirmed": "Indikasi Masalah Driver Terkonfirmasi",
@@ -2883,11 +2889,15 @@ def render_process_section(
     with st.container(border=True):
         st.markdown(f"**Pilih Hasil Observasi:** {next_test['name']}")
         with st.form(key=f"test_result_form_{next_test['id']}_{performed_count}"):
-            choice_options = list(next_test["possible_outcomes"]) + ["skip"]
+            choice_options = [
+                outcome
+                for outcome in next_test["possible_outcomes"]
+                if outcome not in EXCLUDED_UI_OUTCOMES
+            ] + ["skip"]
 
             def format_choice(val: str) -> str:
                 if val == "skip":
-                    return "Lewati pemeriksaan ini (Skip test — uji lain akan diprioritaskan)"
+                    return "Lewati Pemeriksaan Ini (Skip test — uji lain akan diprioritaskan)"
                 return outcome_label(val)
 
             outcome = st.radio(
