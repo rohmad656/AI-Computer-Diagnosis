@@ -1,0 +1,20 @@
+
+============================================================
+Validasi Dataset: Extended — extended_dataset.json
+============================================================
+Jumlah kasus: 180
+
+Distribusi kategori:
+  driver_software: 45
+  overheating: 45
+  ram_memory: 45
+  storage_disk: 45
+
+Distribusi tipe kasus:
+  contradictory: 30
+  cross_category: 56
+  misleading: 2
+  simple: 36
+  uncertain: 56
+
+OK: Tidak ada error. Dataset valid.

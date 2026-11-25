@@ -3,6 +3,8 @@
 
 Dokumen ini merupakan laporan teknis komprehensif dan faktual mengenai arsitektur, implementasi algoritma, basis pengetahuan, antarmuka pengguna, serta hasil evaluasi eksperimental sistem **Asisten Diagnosis Masalah Komputer Berbasis Uniform Cost Search (UCS)**. Seluruh rincian teknis dan data kuantitatif yang disajikan bersumber langsung dari kode program dan hasil eksekusi pengujian pada repositori proyek.
 
+> **Catatan pembaruan (2026-11-25):** Bagian 6.2 dan 6.3 adalah snapshot awal (8 gejala, 6 uji). Sumber kebenaran saat ini adalah `data/symptoms.json` (**13 gejala standar**) dan `data/diagnostic_tests.json` (**7 uji**, termasuk `test_ram_usage_snapshot`). Ringkasan data terkini ada di `PANDUAN_PENELUSURAN_HASIL.md` bagian D. Catatan ini tidak mengubah metrik evaluasi.
+
 ---
 
 ## DAFTAR ISI
@@ -311,7 +313,7 @@ Basis pengetahuan disimpan dalam format JSON terstandarisasi pada direktori `dat
 | `storage_disk` | Storage dan disk | `disk_issue_confirmed` | Pencadangan (*backup*) data penting segera; Pemeriksaan bad sector via `chkdsk`; Penggantian drive jika S.M.A.R.T. rusak. |
 | `ram_memory` | RAM dan memori | `memory_issue_confirmed` | Pengujian memori via Windows Memory Diagnostic / MemTest86; Pembersihan pin RAM; Pengujian modular per slot. |
 
-### 6.2. Definisi 8 Gejala Awal
+### 6.2. Definisi 8 Gejala Awal (Snapshot Awal; total aktual 13 — lihat `data/symptoms.json`)
 
 | Gejala ID | Nama Gejala | Kategori Terkait |
 | :--- | :--- | :--- |
@@ -324,7 +326,7 @@ Basis pengetahuan disimpan dalam format JSON terstandarisasi pada direktori `dat
 | `sym_app_crash_random` | Aplikasi mendadak closed/crash secara acak tanpa pola | `ram_memory` |
 | `sym_bsod_memory_management` | BSOD dengan pesan MEMORY_MANAGEMENT | `ram_memory` |
 
-### 6.3. Definisi 6 Pemeriksaan Diagnostik dan Pemetaan Bukti
+### 6.3. Definisi 6 Pemeriksaan Diagnostik dan Pemetaan Bukti (Snapshot Awal; total aktual 7 — lihat `data/diagnostic_tests.json`)
 
 Setiap uji diagnostik memiliki bobot biaya relatif (*cost*) yang merepresentasikan tingkat disrupsi dan kompleksitas pengerjaannya:
 

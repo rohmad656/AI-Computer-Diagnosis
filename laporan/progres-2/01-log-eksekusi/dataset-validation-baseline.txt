@@ -1,0 +1,14 @@
+
+============================================================
+Validasi Dataset: Baseline — evaluation_dataset.json
+============================================================
+Jumlah kasus: 20
+
+Distribusi kategori:
+  driver_software: 5
+  mixed: 1
+  overheating: 5
+  ram_memory: 3
+  storage_disk: 6
+
+OK: Tidak ada error. Dataset valid.

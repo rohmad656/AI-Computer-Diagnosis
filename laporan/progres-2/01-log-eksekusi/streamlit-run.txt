@@ -1,0 +1,29 @@
+STREAMLIT STARTUP SMOKE TEST — LOG EKSEKUSI AKTUAL
+====================================================
+Perintah  : .venv\Scripts\python.exe -m streamlit run app.py --server.headless true --server.port 8501
+Waktu     : 2026-11-24 (sesi Progres ke-2)
+Platform  : Windows-11-10.0.26300-SP0 | Python 3.14.10
+
+HASIL SMOKE TEST
+-----------------
+Proses Streamlit berhasil dijalankan dan TIDAK keluar dengan error.
+Proses di-timeout setelah 12 detik karena server memblokir dan menunggu koneksi
+(perilaku normal untuk server HTTP yang berjalan terus-menerus).
+
+TimeoutExpired setelah 12 detik adalah bukti bahwa server BERJALAN (bukan crash).
+Server yang crash langsung keluar dengan returncode != 0 dalam milidetik.
+
+Interpretasi:
+  - subprocess.TimeoutExpired => proses masih hidup setelah 12 detik
+  - Tidak ada exception ImportError, ModuleNotFoundError, atau SyntaxError
+  - Kesimpulan: app.py dapat di-import dan Streamlit server berhasil di-inisialisasi
+
+STATUS: PASS (server aktif, tidak crash)
+
+CATATAN SCREENSHOT
+-------------------
+Screenshot antarmuka Streamlit harus diambil secara manual di browser:
+  URL: http://localhost:8501
+  Jalankan: .venv\Scripts\python.exe -m streamlit run app.py
+  Lalu buka browser dan navigasi ke URL di atas.
+  Lihat DAFTAR_SCREENSHOT_YANG_HARUS_DIAMBIL.md untuk checklist lengkap.

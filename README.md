@@ -27,6 +27,7 @@ Aplikasi dikembangkan menggunakan **Python** dan **Streamlit**, dengan basis pen
 - [K. Hasil Evaluasi](#k-hasil-evaluasi)
 - [L. Dokumentasi Teknis](#l-dokumentasi-teknis)
 - [M. Screenshots](#m-screenshots)
+- [P. Panduan Penelusuran Hasil](#p-panduan-penelusuran-hasil)
 - [N. Batasan Sistem](#n-batasan-sistem)
 - [O. Informasi Pengembangan](#o-informasi-pengembangan)
 
@@ -472,13 +473,26 @@ Screenshot tambahan:
 
 ---
 
+## P. Panduan Penelusuran Hasil
+
+Untuk menjawab pertanyaan "hasil ini ada di file mana?", buka [`PANDUAN_PENELUSURAN_HASIL.md`](PANDUAN_PENELUSURAN_HASIL.md). Panduan ini menyediakan peta struktur folder, rincian lokasi algoritma, data, hasil simulasi, hasil evaluasi, dan tabel jawaban cepat untuk dosen/reviewer.
+
+**Cara Menggunakan Panduan:**
+1. Buka file `PANDUAN_PENELUSURAN_HASIL.md` di editor teks.
+2. Gunakan TOC (Table of Contents) untuk melompat ke bagian yang relevan.
+3. Ikuti petunjuk "Lokasi File" dan "Kode Perintah" untuk mengakses file yang dibutuhkan.
+4. Gunakan tabel "Lokasi Screenshot" untuk memeriksa apakah file tersebut tersedia atau belum diambil screenshot.
+5. Untuk memverifikasi hasil evaluasi, konsultasikan `PANDUAN_PENELUSURAN_HASIL.md` dan `laporan/progres-2/04-hasil-evaluasi/RINGKASAN_EVALUASI.md`.
+
+---
+
 ## N. Batasan Sistem
 
 - Aplikasi merupakan **alat bantu diagnosis awal**, bukan pengganti diagnosis teknisi profesional.
 - Aplikasi **tidak melakukan perbaikan komputer otomatis** dan tidak mengubah registry, driver, atau konfigurasi sistem.
 - Aplikasi **tidak memeriksa perangkat keras secara langsung**; seluruh hasil berasal dari gejala dan hasil pemeriksaan yang dimasukkan pengguna.
 - Hasil diagnosis bergantung pada ketepatan input pengguna.
-- Basis pengetahuan terbatas pada **4 kategori** dan **6 jenis pemeriksaan**.
+- Basis pengetahuan terbatas pada **4 kategori** dan **7 jenis pemeriksaan**.
 - Dataset evaluasi merupakan **simulasi/terkurasi**, bukan data lapangan dari perangkat keras nyata.
 - Hasil eksperimen **tidak boleh disamakan dengan akurasi diagnosis dunia nyata**.
 - Gejala kustom hanya tersimpan selama sesi (`st.session_state`) dan tidak permanen.

@@ -1,0 +1,67 @@
+VALIDASI DATASET - LOG EKSEKUSI AKTUAL
+Perintah: python -m evaluation.validate_dataset --baseline / --extended / --combined
+
+============================================================
+[BASELINE]
+============================================================
+
+============================================================
+Validasi Dataset: Baseline — evaluation_dataset.json
+============================================================
+Jumlah kasus: 20
+
+Distribusi kategori:
+  driver_software: 5
+  mixed: 1
+  overheating: 5
+  ram_memory: 3
+  storage_disk: 6
+
+OK: Tidak ada error. Dataset valid.
+
+============================================================
+[EXTENDED]
+============================================================
+
+============================================================
+Validasi Dataset: Extended — extended_dataset.json
+============================================================
+Jumlah kasus: 180
+
+Distribusi kategori:
+  driver_software: 45
+  overheating: 45
+  ram_memory: 45
+  storage_disk: 45
+
+Distribusi tipe kasus:
+  contradictory: 30
+  cross_category: 56
+  misleading: 2
+  simple: 36
+  uncertain: 56
+
+OK: Tidak ada error. Dataset valid.
+
+============================================================
+[COMBINED]
+============================================================
+
+Baseline: 20 kasus
+Extended: 180 kasus
+Total gabungan: 200 kasus
+
+============================================================
+Validasi Dataset: Combined — baseline + extended
+============================================================
+Jumlah kasus: 200
+
+Distribusi kategori:
+  driver_software: 50
+  mixed: 1
+  overheating: 50
+  ram_memory: 48
+  storage_disk: 51
+
+OK: Tidak ada error. Dataset valid.
+

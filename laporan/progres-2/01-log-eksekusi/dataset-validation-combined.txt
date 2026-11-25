@@ -1,0 +1,18 @@
+
+Baseline: 20 kasus
+Extended: 180 kasus
+Total gabungan: 200 kasus
+
+============================================================
+Validasi Dataset: Combined — baseline + extended
+============================================================
+Jumlah kasus: 200
+
+Distribusi kategori:
+  driver_software: 50
+  mixed: 1
+  overheating: 50
+  ram_memory: 48
+  storage_disk: 51
+
+OK: Tidak ada error. Dataset valid.
